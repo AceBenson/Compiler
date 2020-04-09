@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :x
-|2,0,1586461188,,"x"
+|2,0,1586461384,,"x"
 :q
 |2,0,1586460300,,"q"
 
@@ -27,40 +27,60 @@
 # Registers:
 
 # File marks:
-'0  7  1  ~/hw1/scanner.l
-|4,48,7,1,1586461188,"~/hw1/scanner.l"
-'1  11  1  ~/test/inclusive.l
-|4,49,11,1,1586460646,"~/test/inclusive.l"
-'2  5  1  ~/test/inclusive.l
-|4,50,5,1,1586460588,"~/test/inclusive.l"
+'0  141  0  ~/hw1/testcase_basic.out
+|4,48,141,0,1586461384,"~/hw1/testcase_basic.out"
+'1  7  1  ~/hw1/scanner.l
+|4,49,7,1,1586461188,"~/hw1/scanner.l"
+'2  11  1  ~/test/inclusive.l
+|4,50,11,1,1586460646,"~/test/inclusive.l"
 '3  5  1  ~/test/inclusive.l
 |4,51,5,1,1586460588,"~/test/inclusive.l"
-'4  13  1  ~/test/exclusive.l
-|4,52,13,1,1586460496,"~/test/exclusive.l"
-'5  19  9  ~/test/count_line.l
-|4,53,19,9,1586460300,"~/test/count_line.l"
-'6  2  0  ~/test/blank.l
-|4,54,2,0,1586459900,"~/test/blank.l"
-'7  1  0  ~/test/blank.l
-|4,55,1,0,1586459855,"~/test/blank.l"
+'4  5  1  ~/test/inclusive.l
+|4,52,5,1,1586460588,"~/test/inclusive.l"
+'5  13  1  ~/test/exclusive.l
+|4,53,13,1,1586460496,"~/test/exclusive.l"
+'6  19  9  ~/test/count_line.l
+|4,54,19,9,1586460300,"~/test/count_line.l"
+'7  2  0  ~/test/blank.l
+|4,55,2,0,1586459900,"~/test/blank.l"
 '8  1  0  ~/test/blank.l
 |4,56,1,0,1586459855,"~/test/blank.l"
-'9  211  0  ~/test/lex.yy.c
-|4,57,211,0,1586457650,"~/test/lex.yy.c"
+'9  1  0  ~/test/blank.l
+|4,57,1,0,1586459855,"~/test/blank.l"
 
 # Jumplist (newest first):
+-'  141  0  ~/hw1/testcase_basic.out
+|4,39,141,0,1586461384,"~/hw1/testcase_basic.out"
+-'  1  0  ~/hw1/testcase_basic.out
+|4,39,1,0,1586461380,"~/hw1/testcase_basic.out"
 -'  7  1  ~/hw1/scanner.l
 |4,39,7,1,1586461188,"~/hw1/scanner.l"
+-'  7  1  ~/hw1/scanner.l
+|4,39,7,1,1586461188,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586461163,"~/hw1/scanner.l"
 -'  1  0  ~/hw1/scanner.l
 |4,39,1,0,1586461163,"~/hw1/scanner.l"
 -'  11  1  ~/test/inclusive.l
 |4,39,11,1,1586460646,"~/test/inclusive.l"
 -'  11  1  ~/test/inclusive.l
 |4,39,11,1,1586460646,"~/test/inclusive.l"
+-'  11  1  ~/test/inclusive.l
+|4,39,11,1,1586460646,"~/test/inclusive.l"
+-'  11  1  ~/test/inclusive.l
+|4,39,11,1,1586460646,"~/test/inclusive.l"
 -'  5  1  ~/test/inclusive.l
 |4,39,5,1,1586460625,"~/test/inclusive.l"
 -'  5  1  ~/test/inclusive.l
 |4,39,5,1,1586460625,"~/test/inclusive.l"
+-'  5  1  ~/test/inclusive.l
+|4,39,5,1,1586460625,"~/test/inclusive.l"
+-'  5  1  ~/test/inclusive.l
+|4,39,5,1,1586460625,"~/test/inclusive.l"
+-'  5  1  ~/test/inclusive.l
+|4,39,5,1,1586460588,"~/test/inclusive.l"
+-'  5  1  ~/test/inclusive.l
+|4,39,5,1,1586460588,"~/test/inclusive.l"
 -'  5  1  ~/test/inclusive.l
 |4,39,5,1,1586460588,"~/test/inclusive.l"
 -'  5  1  ~/test/inclusive.l
@@ -73,6 +93,14 @@
 |4,39,1,0,1586460580,"~/test/inclusive.l"
 -'  1  0  ~/test/inclusive.l
 |4,39,1,0,1586460580,"~/test/inclusive.l"
+-'  1  0  ~/test/inclusive.l
+|4,39,1,0,1586460580,"~/test/inclusive.l"
+-'  1  0  ~/test/inclusive.l
+|4,39,1,0,1586460580,"~/test/inclusive.l"
+-'  1  0  ~/test/inclusive.l
+|4,39,1,0,1586460580,"~/test/inclusive.l"
+-'  1  0  ~/test/inclusive.l
+|4,39,1,0,1586460580,"~/test/inclusive.l"
 -'  13  1  ~/test/exclusive.l
 |4,39,13,1,1586460496,"~/test/exclusive.l"
 -'  13  1  ~/test/exclusive.l
@@ -89,6 +117,38 @@
 |4,39,13,1,1586460496,"~/test/exclusive.l"
 -'  13  1  ~/test/exclusive.l
 |4,39,13,1,1586460496,"~/test/exclusive.l"
+-'  13  1  ~/test/exclusive.l
+|4,39,13,1,1586460496,"~/test/exclusive.l"
+-'  13  1  ~/test/exclusive.l
+|4,39,13,1,1586460496,"~/test/exclusive.l"
+-'  13  1  ~/test/exclusive.l
+|4,39,13,1,1586460496,"~/test/exclusive.l"
+-'  13  1  ~/test/exclusive.l
+|4,39,13,1,1586460496,"~/test/exclusive.l"
+-'  13  1  ~/test/exclusive.l
+|4,39,13,1,1586460496,"~/test/exclusive.l"
+-'  13  1  ~/test/exclusive.l
+|4,39,13,1,1586460496,"~/test/exclusive.l"
+-'  13  1  ~/test/exclusive.l
+|4,39,13,1,1586460496,"~/test/exclusive.l"
+-'  13  1  ~/test/exclusive.l
+|4,39,13,1,1586460496,"~/test/exclusive.l"
+-'  1  0  ~/test/exclusive.l
+|4,39,1,0,1586460379,"~/test/exclusive.l"
+-'  1  0  ~/test/exclusive.l
+|4,39,1,0,1586460379,"~/test/exclusive.l"
+-'  1  0  ~/test/exclusive.l
+|4,39,1,0,1586460379,"~/test/exclusive.l"
+-'  1  0  ~/test/exclusive.l
+|4,39,1,0,1586460379,"~/test/exclusive.l"
+-'  1  0  ~/test/exclusive.l
+|4,39,1,0,1586460379,"~/test/exclusive.l"
+-'  1  0  ~/test/exclusive.l
+|4,39,1,0,1586460379,"~/test/exclusive.l"
+-'  1  0  ~/test/exclusive.l
+|4,39,1,0,1586460379,"~/test/exclusive.l"
+-'  1  0  ~/test/exclusive.l
+|4,39,1,0,1586460379,"~/test/exclusive.l"
 -'  1  0  ~/test/exclusive.l
 |4,39,1,0,1586460379,"~/test/exclusive.l"
 -'  1  0  ~/test/exclusive.l
@@ -137,6 +197,38 @@
 |4,39,19,9,1586460300,"~/test/count_line.l"
 -'  19  9  ~/test/count_line.l
 |4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
+-'  19  9  ~/test/count_line.l
+|4,39,19,9,1586460300,"~/test/count_line.l"
 -'  2  0  ~/test/blank.l
 |4,39,2,0,1586459900,"~/test/blank.l"
 -'  2  0  ~/test/blank.l
@@ -157,100 +249,15 @@
 |4,39,2,0,1586459900,"~/test/blank.l"
 -'  2  0  ~/test/blank.l
 |4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
--'  1  0  ~/test/blank.l
-|4,39,1,0,1586459894,"~/test/blank.l"
 
 # History of marks within files (newest to oldest):
+
+> ~/hw1/testcase_basic.out
+	*	1586461383	0
+	"	141	0
+	^	141	0
+	.	140	12
+	+	140	12
 
 > ~/hw1/scanner.l
 	*	1586461187	0
