@@ -1,0 +1,15 @@
+/* this is multiple lines
+	comment
+	hahaha
+end*/int i =5;
+/* multiple lines command but one line*/float j = 8.89;
+//single line comment
+int a586 = -0.5;
+int pos = +87;- 0;
+int neg = -99;+0.878;-.1;
+char _5667;
+float _ab36;
+double ab_c57;
+"this is a string"
+"string with \n"
+'\n'

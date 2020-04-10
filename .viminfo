@@ -10,13 +10,34 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Search Pattern:
+~Msle0~/\<DIGIT\>
+
 # Command Line History (newest to oldest):
 :x
-|2,0,1586461384,,"x"
+|2,0,1586501362,,"x"
+:tabp
+|2,0,1586500599,,"tabp"
+:w
+|2,0,1586500597,,"w"
+:tabf testcase2
+|2,0,1586500589,,"tabf testcase2"
 :q
-|2,0,1586460300,,"q"
+|2,0,1586499184,,"q"
+:s
+|2,0,1586492726,,"s"
+:tabn
+|2,0,1586489247,,"tabn"
+:tapb
+|2,0,1586489240,,"tapb"
+:tabf testcase_basic.out
+|2,0,1586489216,,"tabf testcase_basic.out"
 
 # Search String History (newest to oldest):
+? \<DIGIT\>
+|2,1,1586492726,,"\\<DIGIT\\>"
+? \<line_buf\>
+|2,1,1586490776,,"\\<line_buf\\>"
 
 # Expression History (newest to oldest):
 
@@ -25,248 +46,402 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
+"0	LINE	0
+	
+|3,0,0,1,1,0,1586490541,""
+""-	CHAR	0
+	;
+|3,1,36,0,1,0,1586501312,";"
 
 # File marks:
-'0  141  0  ~/hw1/testcase_basic.out
-|4,48,141,0,1586461384,"~/hw1/testcase_basic.out"
-'1  7  1  ~/hw1/scanner.l
-|4,49,7,1,1586461188,"~/hw1/scanner.l"
-'2  11  1  ~/test/inclusive.l
-|4,50,11,1,1586460646,"~/test/inclusive.l"
-'3  5  1  ~/test/inclusive.l
-|4,51,5,1,1586460588,"~/test/inclusive.l"
-'4  5  1  ~/test/inclusive.l
-|4,52,5,1,1586460588,"~/test/inclusive.l"
-'5  13  1  ~/test/exclusive.l
-|4,53,13,1,1586460496,"~/test/exclusive.l"
-'6  19  9  ~/test/count_line.l
-|4,54,19,9,1586460300,"~/test/count_line.l"
-'7  2  0  ~/test/blank.l
-|4,55,2,0,1586459900,"~/test/blank.l"
-'8  1  0  ~/test/blank.l
-|4,56,1,0,1586459855,"~/test/blank.l"
-'9  1  0  ~/test/blank.l
-|4,57,1,0,1586459855,"~/test/blank.l"
+'0  4  0  ~/hw1/testcase2
+|4,48,4,0,1586501362,"~/hw1/testcase2"
+'1  25  17  ~/hw1/scanner.l
+|4,49,25,17,1586501325,"~/hw1/scanner.l"
+'2  26  56  ~/hw1/scanner.l
+|4,50,26,56,1586501270,"~/hw1/scanner.l"
+'3  26  56  ~/hw1/scanner.l
+|4,51,26,56,1586501270,"~/hw1/scanner.l"
+'4  26  31  ~/hw1/scanner.l
+|4,52,26,31,1586501213,"~/hw1/scanner.l"
+'5  26  31  ~/hw1/scanner.l
+|4,53,26,31,1586501213,"~/hw1/scanner.l"
+'6  26  51  ~/hw1/scanner.l
+|4,54,26,51,1586501154,"~/hw1/scanner.l"
+'7  26  51  ~/hw1/scanner.l
+|4,55,26,51,1586501154,"~/hw1/scanner.l"
+'8  26  51  ~/hw1/scanner.l
+|4,56,26,51,1586501154,"~/hw1/scanner.l"
+'9  26  51  ~/hw1/scanner.l
+|4,57,26,51,1586501154,"~/hw1/scanner.l"
 
 # Jumplist (newest first):
--'  141  0  ~/hw1/testcase_basic.out
-|4,39,141,0,1586461384,"~/hw1/testcase_basic.out"
--'  1  0  ~/hw1/testcase_basic.out
-|4,39,1,0,1586461380,"~/hw1/testcase_basic.out"
--'  7  1  ~/hw1/scanner.l
-|4,39,7,1,1586461188,"~/hw1/scanner.l"
--'  7  1  ~/hw1/scanner.l
-|4,39,7,1,1586461188,"~/hw1/scanner.l"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586501362,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586501351,"~/hw1/testcase2"
+-'  25  17  ~/hw1/scanner.l
+|4,39,25,17,1586501325,"~/hw1/scanner.l"
+-'  25  17  ~/hw1/scanner.l
+|4,39,25,17,1586501325,"~/hw1/scanner.l"
 -'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586461163,"~/hw1/scanner.l"
+|4,39,1,0,1586501293,"~/hw1/scanner.l"
 -'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586461163,"~/hw1/scanner.l"
--'  11  1  ~/test/inclusive.l
-|4,39,11,1,1586460646,"~/test/inclusive.l"
--'  11  1  ~/test/inclusive.l
-|4,39,11,1,1586460646,"~/test/inclusive.l"
--'  11  1  ~/test/inclusive.l
-|4,39,11,1,1586460646,"~/test/inclusive.l"
--'  11  1  ~/test/inclusive.l
-|4,39,11,1,1586460646,"~/test/inclusive.l"
--'  5  1  ~/test/inclusive.l
-|4,39,5,1,1586460625,"~/test/inclusive.l"
--'  5  1  ~/test/inclusive.l
-|4,39,5,1,1586460625,"~/test/inclusive.l"
--'  5  1  ~/test/inclusive.l
-|4,39,5,1,1586460625,"~/test/inclusive.l"
--'  5  1  ~/test/inclusive.l
-|4,39,5,1,1586460625,"~/test/inclusive.l"
--'  5  1  ~/test/inclusive.l
-|4,39,5,1,1586460588,"~/test/inclusive.l"
--'  5  1  ~/test/inclusive.l
-|4,39,5,1,1586460588,"~/test/inclusive.l"
--'  5  1  ~/test/inclusive.l
-|4,39,5,1,1586460588,"~/test/inclusive.l"
--'  5  1  ~/test/inclusive.l
-|4,39,5,1,1586460588,"~/test/inclusive.l"
--'  1  0  ~/test/inclusive.l
-|4,39,1,0,1586460580,"~/test/inclusive.l"
--'  1  0  ~/test/inclusive.l
-|4,39,1,0,1586460580,"~/test/inclusive.l"
--'  1  0  ~/test/inclusive.l
-|4,39,1,0,1586460580,"~/test/inclusive.l"
--'  1  0  ~/test/inclusive.l
-|4,39,1,0,1586460580,"~/test/inclusive.l"
--'  1  0  ~/test/inclusive.l
-|4,39,1,0,1586460580,"~/test/inclusive.l"
--'  1  0  ~/test/inclusive.l
-|4,39,1,0,1586460580,"~/test/inclusive.l"
--'  1  0  ~/test/inclusive.l
-|4,39,1,0,1586460580,"~/test/inclusive.l"
--'  1  0  ~/test/inclusive.l
-|4,39,1,0,1586460580,"~/test/inclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  13  1  ~/test/exclusive.l
-|4,39,13,1,1586460496,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  1  0  ~/test/exclusive.l
-|4,39,1,0,1586460379,"~/test/exclusive.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  19  9  ~/test/count_line.l
-|4,39,19,9,1586460300,"~/test/count_line.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
--'  2  0  ~/test/blank.l
-|4,39,2,0,1586459900,"~/test/blank.l"
+|4,39,1,0,1586501293,"~/hw1/scanner.l"
+-'  26  56  ~/hw1/scanner.l
+|4,39,26,56,1586501270,"~/hw1/scanner.l"
+-'  26  56  ~/hw1/scanner.l
+|4,39,26,56,1586501270,"~/hw1/scanner.l"
+-'  26  56  ~/hw1/scanner.l
+|4,39,26,56,1586501270,"~/hw1/scanner.l"
+-'  26  56  ~/hw1/scanner.l
+|4,39,26,56,1586501270,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586501221,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586501221,"~/hw1/scanner.l"
+-'  26  31  ~/hw1/scanner.l
+|4,39,26,31,1586501213,"~/hw1/scanner.l"
+-'  26  31  ~/hw1/scanner.l
+|4,39,26,31,1586501213,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586501196,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586501196,"~/hw1/scanner.l"
+-'  26  51  ~/hw1/scanner.l
+|4,39,26,51,1586501154,"~/hw1/scanner.l"
+-'  26  51  ~/hw1/scanner.l
+|4,39,26,51,1586501154,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586501080,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586501080,"~/hw1/scanner.l"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  5  54  ~/hw1/testcase2
+|4,39,5,54,1586501002,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  1  0  ~/hw1/testcase2
+|4,39,1,0,1586500965,"~/hw1/testcase2"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  36  131  ~/hw1/scanner.l
+|4,39,36,131,1586500826,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586500804,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586500804,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586500804,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586500804,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  48  60  ~/hw1/scanner.l
+|4,39,48,60,1586500781,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586500627,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586500627,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586500627,"~/hw1/scanner.l"
+-'  1  0  ~/hw1/scanner.l
+|4,39,1,0,1586500627,"~/hw1/scanner.l"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
+-'  4  0  ~/hw1/testcase2
+|4,39,4,0,1586500604,"~/hw1/testcase2"
 
 # History of marks within files (newest to oldest):
 
+> ~/hw1/testcase2
+	*	1586501362	0
+	"	4	0
+	^	4	0
+	.	4	0
+	+	12	0
+	+	11	12
+	+	15	3
+	+	7	16
+	+	9	24
+	+	8	17
+	+	6	20
+	+	2	0
+	+	3	0
+	+	4	5
+	+	5	39
+	+	4	13
+	+	5	54
+	+	3	0
+	+	2	0
+	+	3	0
+	+	4	0
+
+> ~/hw1/scanner.l
+	*	1586501324	0
+	"	25	17
+	^	25	18
+	.	25	18
+	+	16	23
+	+	17	8
+	+	7	17
+	+	37	18
+	+	48	14
+	+	37	55
+	+	7	16
+	+	37	46
+	+	28	369
+	+	28	368
+	+	28	370
+	+	28	6
+	+	36	28
+	+	37	0
+	+	36	126
+	+	37	75
+	+	38	0
+	+	37	31
+	+	40	48
+	+	37	36
+	+	39	7
+	+	38	2
+	+	39	0
+	+	27	18
+	+	20	0
+	+	10	12
+	+	11	13
+	+	20	39
+	+	22	62
+	+	21	17
+	+	22	16
+	+	21	17
+	+	7	4
+	+	48	26
+	+	42	4
+	+	40	49
+	+	39	28
+	+	38	62
+	+	37	85
+	+	36	127
+	+	35	7
+	+	15	13
+	+	35	23
+	+	15	13
+	+	35	15
+	+	41	10
+	+	25	18
+	+	40	6
+	+	41	10
+	+	40	5
+	+	41	13
+	+	11	24
+	+	41	13
+	+	41	5
+	+	12	0
+	+	41	9
+	+	39	12
+	+	49	13
+	+	6	4
+	+	7	5
+	+	5	6
+	+	22	44
+	+	42	6
+	+	48	14
+	+	49	33
+	+	42	44
+	+	49	3
+	+	43	9
+	+	45	24
+	+	46	0
+	+	44	19
+	+	45	13
+	+	48	66
+	+	4	18
+	+	35	0
+	+	29	24
+	+	30	7
+	+	31	14
+	+	33	17
+	+	48	67
+	+	32	28
+	+	48	42
+	+	21	56
+	+	22	43
+	+	20	77
+	+	23	75
+	+	27	55
+	+	25	57
+	+	24	73
+	+	25	58
+	+	35	75
+	+	37	87
+	+	38	61
+	+	39	72
+	+	40	57
+	+	41	64
+	+	36	131
+	+	25	54
+	+	26	56
+	+	25	18
+
+> ~/hw1/testcase1
+	*	1586493013	0
+	"	13	4
+	^	13	5
+	.	7	1
+	+	14	0
+	+	13	0
+	+	12	0
+	+	11	0
+	+	10	0
+	+	11	1
+	+	9	0
+	+	8	0
+	+	7	0
+	+	2	0
+	+	3	0
+	+	4	0
+	+	5	0
+	+	6	0
+	+	7	1
+
 > ~/hw1/testcase_basic.out
-	*	1586461383	0
-	"	141	0
+	*	1586489309	0
+	"	10	0
 	^	141	0
 	.	140	12
 	+	140	12
 
-> ~/hw1/scanner.l
-	*	1586461187	0
-	"	7	1
-	^	7	2
-	.	7	1
-	+	1	2
-	+	2	17
-	+	7	1
+> ~/.vimrc
+	*	1586489103	0
+	"	2	15
+	^	2	16
+	.	2	15
+	+	2	15
 
 > ~/test/inclusive.l
 	*	1586460644	0
