@@ -97,3 +97,244 @@ git add .
 git commit -m "uplaod test.out'
 git commit -m "uplaod test.out"
 logout
+cd hw1/
+ls
+vim testcase_basic.out 
+vim scanner.l 
+cd 
+ls -a
+touch .vimrc
+vim .vimrc 
+cd hw1/
+vim scanner.l 
+flex scanner.l 
+vim scanner.l 
+flex scanner.l 
+ls
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+touch testcase1
+vim testcase1
+./a.out < testcase1
+vim scanner.l 
+flex scanner.l 
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase1
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase1
+diff
+diff --help
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase1
+./a.out < testcase_basic
+vim scanner.l 
+cd /home/
+ls
+cd ta/
+cd 
+cd hw1/
+touch testcase2
+vim testcase2
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+vim testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim testcase2
+./a.out < testcase2
+vim scanner.l 
+gcc lex.yy.c -lfl
+flex scanner.l 
+gcc lex.yy.c -lfl
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+./a.out < testcase_basic
+vim testcase2
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim testcase2
+./a.out < testcase2
+cd ../
+git status
+git add .
+git commit -m "support comment and string"
+cd hw1/
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+vim scanner.l 
+vim testcase2
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase2
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase1
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+vim testcase_basic
+./a.out < testcase_basic
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+vim testcase_basic
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim testcase_basic
+flex scanner.l 
+gcc lex.yy.c -lfl
+./a.out < testcase_basic
+vim scanner.l 
+diff ./a.out < testcase_basic testcase_basic.out
+logout
