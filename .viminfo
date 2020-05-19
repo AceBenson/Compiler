@@ -11,15 +11,23 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/\<DIGIT\>
+~MSle0~/assignment
 
 # Command Line History (newest to oldest):
 :x
-|2,0,1586583455,,"x"
+|2,0,1589912132,,"x"
 :w
-|2,0,1586583035,,"w"
+|2,0,1589911709,,"w"
 :q
-|2,0,1586502314,,"q"
+|2,0,1589905325,,"q"
+:q!
+|2,0,1589895420,,"q!"
+:.x
+|2,0,1589890035,,".x"
+:xc
+|2,0,1589527868,,"xc"
+:!q
+|2,0,1589297394,,"!q"
 :tabp
 |2,0,1586500599,,"tabp"
 :tabf testcase2
@@ -34,6 +42,22 @@
 |2,0,1586489216,,"tabf testcase_basic.out"
 
 # Search String History (newest to oldest):
+?/assignment
+|2,1,1589910518,47,"assignment"
+?/'='
+|2,1,1589902711,47,"'='"
+?/expression
+|2,1,1589901061,47,"expression"
+?/STRING
+|2,1,1589889896,47,"STRING"
+?/str
+|2,1,1589889842,47,"str"
+?/.str
+|2,1,1589889834,47,".str"
+?/atod
+|2,1,1589880407,47,"atod"
+?/atof
+|2,1,1589880403,47,"atof"
 ? \<DIGIT\>
 |2,1,1586492726,,"\\<DIGIT\\>"
 ? \<line_buf\>
@@ -46,269 +70,674 @@
 # Debug Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	
-|3,0,0,1,1,0,1586490541,""
-"1	LINE	0
-		strcpy(&buf[offset], yytext); offset+=yyleng;
-|3,0,1,1,1,0,1586503641,"	strcpy(&buf[offset], yytext); offset+=yyleng;"
+"0	CHAR	0
+	I
+|3,0,0,0,1,0,1587043279,"I"
+"1	CHAR	0
+	;
+	int offset=0;
+	char buf[301];
+	char string[301];
+	int stroff
+|3,0,1,0,5,0,1589909786,";","int offset=0;","char buf[301];","char string[301];","int stroff"
 "2	LINE	0
-		strcpy(&buf[offset], yytext); offset++; 
-|3,0,2,1,1,0,1586503559,"	strcpy(&buf[offset], yytext); offset++; "
-"3	LINE	0
-		buf[offset]=yytext[0]; offset++; 
-|3,0,3,1,1,0,1586503405,"	buf[offset]=yytext[0]; offset++; "
+	
+|3,0,2,1,1,0,1589909715,""
+"3	CHAR	0
+	"\"" { BEGIN(_STRING); }
+	<_STRING>"\"" { BEGIN(INITIAL); return STRING_LITERAL;}
+	<_STRING>.|\n|\t {string[stroff]=yytext[0];
+|3,0,3,0,3,0,1589909088,"\"\\\"\" { BEGIN(_STRING); }","<_STRING>\"\\\"\" { BEGIN(INITIAL); return STRING_LITERAL;}","<_STRING>.|\\n|\\t {string[stroff]=yytext[0];"
 "4	LINE	0
-		strcpy(&buf[offset], yytext); offset+=yyleng;
-|3,0,4,1,1,0,1586503383,"	strcpy(&buf[offset], yytext); offset+=yyleng;"
+	#include <stdio.h>
+|3,0,4,1,1,0,1589905596,"#include <stdio.h>"
 "5	LINE	0
-		strcpy(&buf[offset], yytext); offset+=yyleng; 
-|3,0,5,1,1,0,1586503345,"	strcpy(&buf[offset], yytext); offset+=yyleng; "
+	
+|3,0,5,1,1,0,1589902553,""
 "6	LINE	0
-		strcpy(&buf[offset], yytext); offset+=yyleng; 
-|3,0,6,1,1,0,1586503335,"	strcpy(&buf[offset], yytext); offset+=yyleng; "
+	%type <token> expression term factor
+|3,0,6,1,1,0,1589902550,"%type <token> expression term factor"
 "7	LINE	0
-		strcpy(&buf[offset], yytext); offset+=yyleng; 
-|3,0,7,1,1,0,1586503326,"	strcpy(&buf[offset], yytext); offset+=yyleng; "
+	"volatile"		{ count(); return(VOLATILE); }
+|3,0,7,1,1,0,1589900022,"\"volatile\"		{ count(); return(VOLATILE); }"
 "8	LINE	0
-		offset+=yyleng; 
-|3,0,8,1,1,0,1586503315,"	offset+=yyleng; "
+	
+	
+|3,0,8,1,2,0,1589899706,"",""
 "9	LINE	0
-		strcpy(&buf[offset], yytext); 
-|3,0,9,1,1,0,1586503314,"	strcpy(&buf[offset], yytext); "
+	extern char yytext[];
+|3,0,9,1,1,0,1589899704,"extern char yytext[];"
 ""-	CHAR	0
-	y
-|3,1,36,0,1,0,1586503887,"y"
+	A
+|3,1,36,0,1,0,1589911696,"A"
 
 # File marks:
-'0  5  0  ~/hw1/Makefile
-|4,48,5,0,1586583456,"~/hw1/Makefile"
-'1  5  5  ~/hw1/Makefile
-|4,49,5,5,1586583377,"~/hw1/Makefile"
-'2  7  21  ~/hw1/Makefile
-|4,50,7,21,1586583285,"~/hw1/Makefile"
-'3  7  21  ~/hw1/Makefile
-|4,51,7,21,1586583285,"~/hw1/Makefile"
-'4  7  21  ~/hw1/Makefile
-|4,52,7,21,1586583285,"~/hw1/Makefile"
-'5  7  21  ~/hw1/Makefile
-|4,53,7,21,1586583285,"~/hw1/Makefile"
-'6  1  11  ~/hw1/Makefile
-|4,54,1,11,1586583047,"~/hw1/Makefile"
-'7  1  11  ~/hw1/Makefile
-|4,55,1,11,1586583047,"~/hw1/Makefile"
-'8  1  11  ~/hw1/Makefile
-|4,56,1,11,1586583047,"~/hw1/Makefile"
-'9  1  11  ~/hw1/Makefile
-|4,57,1,11,1586583047,"~/hw1/Makefile"
+'0  130  2  ~/hw2/scanner.l
+|4,48,130,2,1589912132,"~/hw2/scanner.l"
+'1  304  0  ~/hw2/parser.y
+|4,49,304,0,1589912095,"~/hw2/parser.y"
+'2  112  0  ~/hw2/scanner.l
+|4,50,112,0,1589912049,"~/hw2/scanner.l"
+'3  112  0  ~/hw2/scanner.l
+|4,51,112,0,1589912049,"~/hw2/scanner.l"
+'4  258  1  ~/hw2/parser.y
+|4,52,258,1,1589911860,"~/hw2/parser.y"
+'5  258  1  ~/hw2/parser.y
+|4,53,258,1,1589911860,"~/hw2/parser.y"
+'6  283  0  ~/hw2/parser.y
+|4,54,283,0,1589911648,"~/hw2/parser.y"
+'7  283  0  ~/hw2/parser.y
+|4,55,283,0,1589911648,"~/hw2/parser.y"
+'8  283  0  ~/hw2/parser.y
+|4,56,283,0,1589911648,"~/hw2/parser.y"
+'9  283  0  ~/hw2/parser.y
+|4,57,283,0,1589911648,"~/hw2/parser.y"
 
 # Jumplist (newest first):
--'  5  0  ~/hw1/Makefile
-|4,39,5,0,1586583456,"~/hw1/Makefile"
--'  1  0  ~/hw1/Makefile
-|4,39,1,0,1586583446,"~/hw1/Makefile"
--'  5  5  ~/hw1/Makefile
-|4,39,5,5,1586583377,"~/hw1/Makefile"
--'  1  0  ~/hw1/Makefile
-|4,39,1,0,1586583357,"~/hw1/Makefile"
--'  7  21  ~/hw1/Makefile
-|4,39,7,21,1586583285,"~/hw1/Makefile"
--'  7  21  ~/hw1/Makefile
-|4,39,7,21,1586583285,"~/hw1/Makefile"
--'  7  21  ~/hw1/Makefile
-|4,39,7,21,1586583285,"~/hw1/Makefile"
--'  1  0  ~/hw1/Makefile
-|4,39,1,0,1586583196,"~/hw1/Makefile"
--'  1  11  ~/hw1/Makefile
-|4,39,1,11,1586583047,"~/hw1/Makefile"
--'  6  44  ~/hw1/Makefile
-|4,39,6,44,1586582996,"~/hw1/Makefile"
--'  6  44  ~/hw1/Makefile
-|4,39,6,44,1586582996,"~/hw1/Makefile"
--'  6  44  ~/hw1/Makefile
-|4,39,6,44,1586582996,"~/hw1/Makefile"
--'  7  27  ~/hw1/Makefile
-|4,39,7,27,1586582996,"~/hw1/Makefile"
--'  7  27  ~/hw1/Makefile
-|4,39,7,27,1586582996,"~/hw1/Makefile"
--'  1  0  ~/hw1/Makefile
-|4,39,1,0,1586582735,"~/hw1/Makefile"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  1  0  ~/hw1/scanner.l
-|4,39,1,0,1586503996,"~/hw1/scanner.l"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
--'  14  8  ~/hw1/testcase_basic
-|4,39,14,8,1586503894,"~/hw1/testcase_basic"
+-'  130  2  ~/hw2/scanner.l
+|4,39,130,2,1589912132,"~/hw2/scanner.l"
+-'  1  0  ~/hw2/scanner.l
+|4,39,1,0,1589912098,"~/hw2/scanner.l"
+-'  304  0  ~/hw2/parser.y
+|4,39,304,0,1589912095,"~/hw2/parser.y"
+-'  304  0  ~/hw2/parser.y
+|4,39,304,0,1589912095,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589912090,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589912090,"~/hw2/parser.y"
+-'  112  0  ~/hw2/scanner.l
+|4,39,112,0,1589912049,"~/hw2/scanner.l"
+-'  112  0  ~/hw2/scanner.l
+|4,39,112,0,1589912049,"~/hw2/scanner.l"
+-'  112  0  ~/hw2/scanner.l
+|4,39,112,0,1589912049,"~/hw2/scanner.l"
+-'  1  0  ~/hw2/scanner.l
+|4,39,1,0,1589912032,"~/hw2/scanner.l"
+-'  1  0  ~/hw2/scanner.l
+|4,39,1,0,1589912032,"~/hw2/scanner.l"
+-'  258  1  ~/hw2/parser.y
+|4,39,258,1,1589911860,"~/hw2/parser.y"
+-'  258  1  ~/hw2/parser.y
+|4,39,258,1,1589911860,"~/hw2/parser.y"
+-'  258  1  ~/hw2/parser.y
+|4,39,258,1,1589911860,"~/hw2/parser.y"
+-'  258  1  ~/hw2/parser.y
+|4,39,258,1,1589911860,"~/hw2/parser.y"
+-'  258  1  ~/hw2/parser.y
+|4,39,258,1,1589911860,"~/hw2/parser.y"
+-'  258  1  ~/hw2/parser.y
+|4,39,258,1,1589911860,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911672,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911672,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911672,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911672,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  283  0  ~/hw2/parser.y
+|4,39,283,0,1589911648,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911604,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911604,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911604,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911604,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  295  0  ~/hw2/parser.y
+|4,39,295,0,1589911565,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911502,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911502,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911502,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911502,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  267  5  ~/hw2/parser.y
+|4,39,267,5,1589911468,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911406,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911406,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911406,"~/hw2/parser.y"
+-'  1  0  ~/hw2/parser.y
+|4,39,1,0,1589911406,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  289  30  ~/hw2/parser.y
+|4,39,289,30,1589911321,"~/hw2/parser.y"
+-'  287  30  ~/hw2/parser.y
+|4,39,287,30,1589911321,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  289  30  ~/hw2/parser.y
+|4,39,289,30,1589911321,"~/hw2/parser.y"
+-'  287  30  ~/hw2/parser.y
+|4,39,287,30,1589911321,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  289  30  ~/hw2/parser.y
+|4,39,289,30,1589911321,"~/hw2/parser.y"
+-'  287  30  ~/hw2/parser.y
+|4,39,287,30,1589911321,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  289  30  ~/hw2/parser.y
+|4,39,289,30,1589911321,"~/hw2/parser.y"
+-'  287  30  ~/hw2/parser.y
+|4,39,287,30,1589911321,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  289  30  ~/hw2/parser.y
+|4,39,289,30,1589911321,"~/hw2/parser.y"
+-'  287  30  ~/hw2/parser.y
+|4,39,287,30,1589911321,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  289  30  ~/hw2/parser.y
+|4,39,289,30,1589911321,"~/hw2/parser.y"
+-'  287  30  ~/hw2/parser.y
+|4,39,287,30,1589911321,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  289  30  ~/hw2/parser.y
+|4,39,289,30,1589911321,"~/hw2/parser.y"
+-'  287  30  ~/hw2/parser.y
+|4,39,287,30,1589911321,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  288  30  ~/hw2/parser.y
+|4,39,288,30,1589911321,"~/hw2/parser.y"
+-'  289  30  ~/hw2/parser.y
+|4,39,289,30,1589911321,"~/hw2/parser.y"
 
 # History of marks within files (newest to oldest):
 
-> ~/hw1/Makefile
-	*	1586583455	0
+> ~/hw2/scanner.l
+	*	1589912132	0
+	"	130	2
+	^	130	3
+	.	130	2
+	+	11	12
+	+	81	15
+	+	82	15
+	+	83	15
+	+	84	15
+	+	85	15
+	+	86	15
+	+	87	15
+	+	88	15
+	+	89	14
+	+	90	14
+	+	43	286
+	+	43	294
+	+	43	293
+	+	77	26
+	+	77	25
+	+	91	14
+	+	92	14
+	+	93	14
+	+	95	14
+	+	96	14
+	+	97	14
+	+	98	14
+	+	94	14
+	+	99	14
+	+	100	14
+	+	101	14
+	+	102	14
+	+	111	21
+	+	112	27
+	+	77	43
+	+	75	37
+	+	43	4
+	+	43	335
+	+	45	0
+	+	75	0
+	+	79	34
+	+	80	14
+	+	43	332
+	+	36	47
+	+	36	23
+	+	43	0
+	+	43	317
+	+	43	285
+	+	43	313
+	+	44	55
+	+	36	43
+	+	37	0
+	+	44	50
+	+	14	0
+	+	20	0
+	+	38	18
+	+	39	18
+	+	35	49
+	+	35	12
+	+	23	18
+	+	24	0
+	+	25	0
+	+	26	0
+	+	116	0
+	+	115	0
+	+	114	24
+	+	114	0
+	+	112	73
+	+	111	51
+	+	112	0
+	+	112	18
+	+	111	36
+	+	113	18
+	+	77	26
+	+	77	17
+	+	20	11
+	+	77	47
+	+	109	19
+	+	114	22
+	+	115	0
+	+	14	0
+	+	35	0
+	+	34	11
+	+	21	0
+	+	7	0
+	+	5	18
+	+	42	18
+	+	43	0
+	+	132	0
+	+	120	12
+	+	44	21
+	+	131	0
+	+	130	5
+	+	103	14
+	+	104	14
+	+	105	14
+	+	106	14
+	+	107	14
+	+	108	14
+	+	109	14
+	+	113	20
+	+	111	0
+	+	112	0
+	+	130	2
+
+> ~/hw2/parser.y
+	*	1589912092	0
+	"	304	0
+	^	289	13
+	.	288	10
+	+	246	32
+	+	245	51
+	+	246	51
+	+	247	27
+	+	249	24
+	+	250	27
+	+	251	27
+	+	252	27
+	+	265	14
+	+	266	6
+	+	272	1
+	+	257	20
+	+	261	2
+	+	260	20
+	+	273	18
+	+	274	0
+	+	287	21
+	+	288	11
+	+	289	13
+	+	286	17
+	+	281	1
+	+	49	0
+	+	15	37
+	+	16	62
+	+	202	0
+	+	70	0
+	+	69	20
+	+	16	73
+	+	157	51
+	+	158	47
+	+	181	28
+	+	276	40
+	+	280	27
+	+	187	0
+	+	87	2
+	+	86	20
+	+	88	21
+	+	98	19
+	+	99	34
+	+	102	2
+	+	103	19
+	+	104	37
+	+	105	44
+	+	107	77
+	+	109	14
+	+	110	15
+	+	114	1
+	+	91	16
+	+	89	19
+	+	97	2
+	+	94	27
+	+	97	1
+	+	98	0
+	+	190	0
+	+	189	38
+	+	95	18
+	+	159	47
+	+	162	19
+	+	163	17
+	+	166	14
+	+	167	24
+	+	170	21
+	+	171	36
+	+	173	1
+	+	158	39
+	+	174	15
+	+	175	13
+	+	177	1
+	+	25	0
+	+	45	33
+	+	48	32
+	+	99	37
+	+	164	29
+	+	23	0
+	+	49	19
+	+	99	38
+	+	49	15
+	+	99	47
+	+	278	49
+	+	282	24
+	+	283	24
+	+	285	1
+	+	126	39
+	+	129	14
+	+	130	8
+	+	131	1
+	+	127	2
+	+	126	16
+	+	24	14
+	+	275	10
+	+	291	0
+	+	290	16
+	+	193	18
+	+	288	28
+	+	289	31
+	+	288	30
+	+	269	0
+	+	268	5
+	+	289	12
+	+	288	10
+
+> ~/hw2/testcase/castle.c
+	*	1589908756	0
+	"	51	0
+	.	1	0
+	+	50	1
+	+	1	0
+
+> ~/hw2/testcase/test.c
+	*	1589902858	0
+	"	14	0
+	^	14	1
+	.	14	0
+	+	14	0
+
+> ~/hw2/parser
+	*	1589900607	0
+	"	1	0
+
+> ~/hw2/testcase/array_decl.c
+	*	1589900290	0
+	"	4	0
+	^	4	0
+	.	3	12
+	+	3	12
+
+> ~/hw2/testcase/expr.c
+	*	1589900282	0
+	"	8	0
+	^	8	0
+	.	7	0
+	+	7	0
+
+> ~/hw2/testcase/scalar_decl.c
+	*	1589900262	0
 	"	5	0
+	^	5	0
+	.	4	0
+	+	3	9
+	+	4	0
+
+> ~/hw2/parser.yu
+	*	1589872762	0
+	"	1	0
+
+> ~/hw2/Makefile
+	*	1589870903	0
+	"	1	0
+	^	1	7
+	.	1	7
+	+	5	20
+	+	3	53
+	+	5	0
+	+	5	15
+	+	7	27
+	+	5	19
+	+	7	22
+	+	5	15
+	+	3	35
+	+	9	14
+	+	5	15
+	+	6	0
+	+	1	20
+	+	4	0
+	+	1	7
+
+> ~/hw2/y.tab.h
+	*	1589868696	0
+	"	1	0
+
+> ~/hw1/scanner.l
+	*	1589529495	0
+	"	109	3
+	^	109	30
+	.	109	29
+	+	128	28
+	+	128	0
+	+	128	12
+	+	132	47
+	+	132	27
+	+	132	12
+	+	136	47
+	+	136	25
+	+	136	12
+	+	138	67
+	+	138	47
+	+	138	32
+	+	116	47
+	+	117	16
+	+	118	0
+	+	49	0
+	+	14	45
+	+	114	0
+	+	112	1
+	+	113	0
+	+	112	11
+	+	116	11
+	+	120	1
+	+	121	0
+	+	120	11
+	+	124	1
+	+	125	0
+	+	124	11
+	+	128	1
+	+	129	0
+	+	128	11
+	+	132	1
+	+	133	0
+	+	132	11
+	+	136	1
+	+	137	0
+	+	136	11
+	+	138	21
+	+	138	32
+	+	138	31
+	+	146	11
+	+	149	11
+	+	7	11
+	+	91	11
+	+	86	11
+	+	98	17
+	+	96	14
+	+	81	11
+	+	73	11
+	+	74	0
+	+	77	1
+	+	78	0
+	+	77	11
+	+	78	11
+	+	69	16
+	+	70	11
+	+	95	12
+	+	143	0
+	+	95	13
+	+	94	7
+	+	97	9
+	+	135	7
+	+	56	8
+	+	100	21
+	+	103	48
+	+	100	34
+	+	101	42
+	+	106	46
+	+	107	44
+	+	108	28
+	+	109	27
+	+	110	27
+	+	102	32
+	+	138	1
+	+	139	0
+	+	8	17
+	+	9	12
+	+	100	51
+	+	102	9
+	+	101	60
+	+	100	53
+	+	101	125
+	+	102	19
+	+	101	108
+	+	102	14
+	+	101	10
+	+	109	96
+	+	109	31
+	+	109	18
+	+	109	33
+	+	109	46
+	+	109	69
+	+	109	89
+	+	109	29
+	+	109	31
+	+	109	29
+	+	109	100
+	+	110	0
+	+	109	84
+	+	109	29
+
+> ~/comment.txt
+	*	1589527868	0
+	"	23	10
+	^	23	11
+	.	23	10
+	+	23	10
+
+> ~/hw2/y.tab.c
+	*	1589298084	0
+	"	428	0
+
+> ~/hw1/Makefile
+	*	1589296877	0
+	"	1	0
 	^	5	1
 	.	5	0
 	+	6	51
@@ -325,111 +754,16 @@
 	+	7	21
 	+	5	0
 
-> ~/hw1/scanner.l
-	*	1586503994	0
+> ~/hw1/testcase_string
+	*	1587041375	0
+	"	1	8
+	^	1	9
+	.	1	8
+	+	1	8
+
+> /proc/19617/fd/62
+	*	1586863132	0
 	"	1	0
-	^	94	10
-	.	94	9
-	+	43	1
-	+	19	6
-	+	17	19
-	+	44	23
-	+	43	0
-	+	21	8
-	+	20	17
-	+	24	17
-	+	22	8
-	+	23	25
-	+	27	17
-	+	25	8
-	+	26	25
-	+	30	17
-	+	28	8
-	+	33	17
-	+	32	0
-	+	36	18
-	+	42	17
-	+	43	0
-	+	40	8
-	+	37	8
-	+	34	8
-	+	29	27
-	+	32	30
-	+	35	29
-	+	38	27
-	+	41	29
-	+	106	14
-	+	109	88
-	+	113	143
-	+	117	99
-	+	114	31
-	+	114	17
-	+	114	15
-	+	118	47
-	+	118	15
-	+	122	31
-	+	122	17
-	+	122	28
-	+	122	0
-	+	122	12
-	+	126	47
-	+	126	27
-	+	126	12
-	+	130	47
-	+	130	25
-	+	130	12
-	+	134	47
-	+	134	27
-	+	134	12
-	+	110	47
-	+	111	16
-	+	112	0
-	+	47	0
-	+	12	45
-	+	108	0
-	+	106	1
-	+	107	0
-	+	106	11
-	+	110	11
-	+	114	1
-	+	115	0
-	+	114	11
-	+	118	1
-	+	119	0
-	+	118	11
-	+	122	1
-	+	123	0
-	+	122	11
-	+	126	1
-	+	127	0
-	+	126	11
-	+	130	1
-	+	131	0
-	+	130	11
-	+	134	1
-	+	135	0
-	+	134	11
-	+	144	11
-	+	147	11
-	+	7	11
-	+	88	11
-	+	83	11
-	+	95	17
-	+	93	14
-	+	78	11
-	+	70	11
-	+	71	0
-	+	74	1
-	+	75	0
-	+	74	11
-	+	75	11
-	+	66	16
-	+	67	11
-	+	92	12
-	+	141	0
-	+	92	13
-	+	91	7
-	+	94	9
 
 > ~/hw1/testcase_basic
 	*	1586503893	0

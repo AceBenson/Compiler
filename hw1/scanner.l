@@ -5,6 +5,8 @@
 int lcnt=0;
 int offset=0;
 char buf[301];
+char string[301];
+int stroff=0;
 int sourceon = 1;
 int tokenon = 1;
 int target;
@@ -51,6 +53,7 @@ void printSource() {
 }
 %}
 
+%x STRING
 %x PROGMA
 %x C_COMMENT
 %x C_COMMENT_L
@@ -94,14 +97,17 @@ SPACE " "
 	offset=0; 
 	BEGIN(INITIAL); 
 }
-"//"            { BEGIN(C_COMMENT_L); strcpy(&buf[offset], yytext); offset+=2;}
+"\"" { BEGIN(STRING); storeBuf(); string[stroff]='\"';stroff++;}
+<STRING>"\"" { BEGIN(INITIAL); storeBuf(); string[stroff]='\"';string[stroff+1]='\0'; printf("#token string:%s\n", string);stroff=0;}
+<STRING>.|\n|\t {string[stroff]=yytext[0];stroff++;storeBuf();}
+"//"            { BEGIN(C_COMMENT_L); storeBuf();}
 <C_COMMENT_L>.  { strcpy(&buf[offset], yytext); offset++;}
 <C_COMMENT_L>\n { lcnt++; buf[offset]='\0'; printSource(); offset=0; BEGIN(INITIAL); }
-"/*"            { BEGIN(C_COMMENT); strcpy(&buf[offset], yytext); offset+=2;}
-<C_COMMENT>"*/" { BEGIN(INITIAL); strcpy(&buf[offset], yytext); offset+=2;}
-<C_COMMENT>\t   { strcpy(&buf[offset], yytext); offset++;}
-<C_COMMENT>\n   { strcpy(&buf[offset], yytext); offset++;}
-<C_COMMENT>.    { strcpy(&buf[offset], yytext); offset++;}
+"/*"            { BEGIN(C_COMMENT); storeBuf();}
+<C_COMMENT>"*/" { BEGIN(INITIAL); storeBuf();}
+<C_COMMENT>\t   { storeBuf();}
+<C_COMMENT>\n   { storeBuf();}
+<C_COMMENT>.    { storeBuf();}
 {TYPE}|void|const|NULL|for|do|while|break|continue|if|else|return|struct|switch|case|default|fclose|clearerr|feof|ferror|fflush|fgetpos|fopen|fread|freopen|fseek|fsetpos|ftell|fwrite|remove|rename|rewind|setbuf|setvbuf|tmpfile|tmpnam|fprintf|printf|sprintf|vfprintf|vprintf|vsprintf|fscanf|scanf|sscanf|fgetc|fgets|fputc|fputs|getc|getchar|gets|putc|putchar|puts|ungetc|perror {
 	storeBuf();
 	printToken(0);
@@ -126,13 +132,9 @@ SPACE " "
 	storeBuf();
 	printToken(5);
 }
-'.'|'\\n' { 
+'.'|'\\.' { 
 	storeBuf();
 	printToken(6);
-}
-"\""(.|\\n)*"\"" { 
-	storeBuf();
-	printToken(7);
 }
 \n {
 	lcnt++;
