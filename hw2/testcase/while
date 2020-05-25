@@ -1,0 +1,15 @@
+int main()
+{
+	int i = 10;
+	while(i>0) {
+		char a = 'a';
+		a = a * 5;
+		i--;
+	}
+	do {
+		float f = 1.5;
+		f = a/8;
+		i++;
+	} while(i<20);
+	return 0;
+}

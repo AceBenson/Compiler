@@ -1,0 +1,9 @@
+int main()
+{
+	int id = 0;
+	switch(id) {
+		case 0: return 0;
+		case 1: printf("");
+		default: break;
+	}
+}

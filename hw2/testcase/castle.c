@@ -1,6 +1,6 @@
 
 int board[5][5];
-void place(int);
+void place(int)
 int valid(int,int);
 void show_board()
 {	

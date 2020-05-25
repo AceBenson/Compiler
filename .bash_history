@@ -588,3 +588,1040 @@ make
 vim scanner.l 
 vim parser.y
 logout
+cd hw2
+vim parser.yu
+vim parser.y
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+vim scanner.l
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+vim scanner.l 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim scanner.l 
+vim parser.y 
+make
+vim parser.y 
+vim scanner.l 
+make
+vim scanner.l 
+make
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim scanner.l 
+make
+vim parser.y 
+vim scanner.l 
+make
+vim scanner.l 
+vim parser.y 
+vim scanner.l 
+./parser 
+vim parser.y 
+vim scanner.l 
+make
+./parser 
+vim scanner.l 
+make
+./parser 
+vim scanner.l 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser 
+1+1;
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+./parser 
+make
+vim parser.y 
+make
+vim scanner.l 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser 
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser
+vim parser.y 
+./parser
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim scanner.l 
+make
+./parser 
+vim scanner.l 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+vim scanner.l 
+make
+vim scanner.l 
+make
+./parser 
+mkdir testcase
+cd testcase/
+touch scalar_decl.c
+touch expr.c
+touch array_decl.c
+vim scalar_decl.c 
+vim expr.c 
+vim array_decl.c 
+cd ../
+./parser < testcase/scalar_decl.c 
+./parser < testcase/expr.c 
+./parser 
+vim parser.y 
+./parser 
+vim parser
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim scanner.l 
+vim parser.y 
+make
+vim scanner.l 
+make
+./parser 
+vim parser.y 
+./parser 
+touch testcase/test.c
+vim testcase/test.c 
+./parser < testcase/test.c 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/test.c 
+./parser 
+./parser < testcase/expr.c 
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+./parser 
+make
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser 
+touch testcase/castle.c
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+vim scanner.l 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser 
+./parser < testcase/castle.c 
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+./parser 
+vim scanner.l 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+./parser 
+vim scanner.l 
+vim parser.y 
+make
+./parser 
+./parser < testcase/castle.c 
+./parser 
+vim testcase/castle.c 
+vim scanner.l 
+vim parser.y 
+make
+vim scanner.l 
+make
+./parser 
+vim scanner.l 
+make
+vim scanner.l 
+make
+./parser 
+vim scanner.l 
+make
+./parser 
+vim scanner.l 
+make
+./parser 
+vim parser.y 
+vim scanner.l 
+make
+./parser < testcase/castle.c 
+vim scanner.l 
+make
+./parser < testcase/castle.c 
+./parser 
+vim parser.y 
+./parser 
+vim parser.y 
+make
+./parser < testcase/castle.c 
+./parser 
+vim parser.y 
+./parser 
+vim scanner.l 
+make
+1
+./parser 
+vim scanner.l 
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+./parser 
+vim parser.y 
+./parser testcase/test.c 
+./parser < testcase/test.c 
+make
+./parser < testcase/test.c 
+./parser 
+vim scanner.l 
+make
+./parser 
+./parser < testcase/castle.c 
+vim parser.y 
+vim scanner.l 
+cd ../
+git status
+git add .
+git commit -m "hw2 first commit"
+logout
+cd hw2/
+ls
+vim testcase1
+./parser < testcase1
+vim scanner.l
+make
+./parser < testcase1
+vim scanner.l
+cd hw2
+vim parser.y 
+make
+./parser < testcase1
+./parser < testcase/castle.c 
+vim scanner.l
+make
+./parser < testcase/castle.c 
+vim parser.y 
+,ale
+make
+./parser < testcase/castle.c 
+vim scanner.l 
+./parser 
+golden_parser < testcase/castle.c 
+vim testcase/castle.c 
+golden_parser < testcase/castle.c 
+golden_parser
+vim testcase/castle.c 
+golden_parser
+vim Makefile 
+make
+ls
+rm scanner
+ls
+make
+vim Makefile 
+make
+ls
+vim Makefile 
+make
+vim parser.y 
+golden_parser < testcase/test.c 
+vim testcass/test.c
+vim testcase/test.c
+golden_parser < testcase1
+vim parser.y 
+make
+./parser < testcase1
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+./parser < testcase1
+vim parser.y 
+vim scanner.l 
+make
+./parser < testcase1
+vim parser.y 
+golden_parser < testcase1
+vim parser.y 
+logout
+cd hw2
+vim parser.y 
+vim scanner.l 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase1
+vim parser.y 
+make
+./parser < testcase1
+vim scanner.l 
+make
+./parser < testcase1
+make
+./parser < testcase1
+vim parser.y 
+make
+./parser < testcase1
+vim parser.y 
+make
+./parser < testcase1
+vim parser.y 
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase1
+vim parser.y 
+cd hw2
+vim parser.y 
+clean
+cd hw2
+vim parser.y 
+make
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser <testcase1
+./parser
+vim parser.y 
+make
+vim parser
+vim parser.y 
+make
+./parser < testcase1
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase1
+vim testcase1
+vim parser.y 
+make
+./parser < testcase1
+golden_parser < testcase1
+vim parser.y 
+make
+./parser < testcase1
+vim scanner.l 
+make
+./parser < testcase1
+vim scanner.l 
+vim parser.y 
+cd hw2
+make
+./parser < testcase/expr.c 
+make
+./parser < testcase/expr.c 
+make
+./parser < testcase/expr.c 
+make
+./parser < testcase/expr.c 
+make
+./parser < testcase/expr.c 
+./parser < testcase/basic 
+golden_parser < testcase/basic 
+diff <(golden_parser < testcase1) <(./parser < testcase1)
+./parser < testcase1
+vim testcase1
+./parser < testcase1
+./parser 
+vim testcase/basic 
+./parser < testcase/basic 
+make
+./parser < testcase/basic 
+diff <(golden_parser < testcase1) <(./parser < testcase1)
+make
+diff <(golden_parser < testcase1) <(./parser < testcase1)
+diff <(golden_parser < testcase/basic) <(./parser < testcase/basic)
+vim testcase/basic 
+./parser < testcase/basic 
+make
+diff <(golden_parser < testcase1) <(./parser < testcase1)
+./parser < testcase1
+golden_parser < testcase1
+diff <(cat testcase1 | golden_parser) <(cat testcase1 | ./parser)
+make
+diff <(cat testcase1 | golden_parser) <(cat testcase1 | ./parser)
+diff <(golden_parser < testcase1) <(./parser < testcase1)
+diff <(golden_parser < testcase/basic) <(./parser < testcase/basic)
+diff <(golden_parser < testcase/expr.c) <(./parser < testcase/expr.c)
+ls testcase
+diff <(golden_parser < testcase/array_decl.c) <(./parser < testcase/array_decl.c)
+./parser < testcase/array_decl.c 
+golden_parser < testcase/array_decl.c 
+vim testcase/basic 
+golden_parser < testcase/array_decl.c 
+golden_parser < testcase/basic 
+diff <(golden_parser < testcase/basic) <(./parser < testcase/basic)
+./parser < testcase/basic 
+logout
+cd hw2
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase1
+vim parser.y 
+./parser 
+vim parser.y 
+vim scanner.l 
+make
+./parser < testcase1
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+golden_parser < testcase1
+make
+./parser < testcase1
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase1
+./parser
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+touch testcase/easy
+vim testcase/easy
+./parser < testcase/easy
+vim parser.y 
+vim testcase/easy
+./parser < testcase/easy
+vim parser.y 
+make
+vim parser.y 
+vim testcase/easy 
+make
+./parser < testcase/easy 
+vim scanner.l 
+make
+./parser < testcase/easy 
+golden_parser < testcase/easy 
+vim scanner.l 
+vim parser.y 
+make
+./parser < testcase/easy 
+vim parser.y 
+make
+./parser < testcase/easy 
+golden_parser < testcase/easy 
+make
+ls testcase
+mv testcase/easy testcase/sample
+vim parser.y 
+make
+mv testcase/sample testcase/b
+mv testcase/easy testcase/basic 
+golden_parser < testcase/basic 
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim scanner.l 
+make
+./parser < testcase/basic 
+vim scanner.l 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+vim testcase/basic 
+vim parser.y 
+make
+vim testcase/basic 
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim scanner.l 
+make
+./parser < testcase/basic 
+vim scanner.l 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+./parser 
+vim parser.y 
+make
+./parser < testcase/basic 
+./parser 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+vim scanner.l 
+make
+./parser < testcase/basic 
+vim scanner.l 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+golden_parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+./parser testcase1
+./parser < testcase1
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase1
+vim parser.y 
+make
+./parser < testcase/basic 
+golden_parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+golden_parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+golden_parser < testcase/basic 
+vim testcase/basic 
+./parser < testcase/basic 
+golden_parser < testcase/basic 
+vim testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+vim testcase/basic 
+golden_parser < testcase/basic 
+vim scanner.l 
+vim parser.y 
+vim testcase/basic 
+golden_parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser testcase/basic 
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+golden_parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim scanner.l 
+make
+./parser < testcase/basic 
+vim scanner.l 
+make
+./parser < testcase/basic 
+vim scanner.l 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser testcase/basic 
+./parser < testcase/basic 
+vim parser.y 
+vim testcase1
+./parser < testcase1
+./parser 
+vim testcase1
+./parser 
+vim testcase1
+./parser 
+vim testcase1
+vim testcase/basic 
+./parser <testcase/basic 
+vim scanner.l 
+make
+./parser <testcase/basic 
+vim testcase/basic 
+./parser 
+vim testcase/basic 
+./parser <testcase/basic 
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser testcase/basic 
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/basic 
+vim testcase/basic 
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+golden_parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+./parser 
+vim parser.y 
+golden_parser 
+vim parser.y 
+vim testcase/basic 
+./parser < testcase/basic 
+vim testcase/basic 
+golden_parser < testcase/basic 
+vim testcase/basic 
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+ls
+vim y.output 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim testcase/basic 
+./parser < testcase/basic 
+vim scanner.l 
+make
+./parser < testcase/basic 
+make
+vim scanner.l 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+vim parser.y 
+make
+vim testcase/expr.c 
+golden_parser < testcase/expr.c 
+./parser < testcase/expr.c 
+vim testcase/expr.c 
+vim parser.y 
+make
+./parser < testcase/expr.c 
+vim parser.y 
+make
+./parser < testcase/basic 
+./parser < testcase/expr.c 
+vim parser.y 
+make
+./parser < testcase/expr.c 
+vim parser.y 
+make
+./parser < testcase/expr.c 
+vim parser.y 
+make
+./parser < testcase/expr.c 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/expr.c 
+vim parser.y 
+make
+./parser < testcase/expr.c 
+vim parser.y 
+make
+./parser < testcase/expr.c 
+vim parser.y 
+make
+./parser < testcase/expr.c 
+vim parser.y 
+cd hw2
+./parser 
+vim testcase/basic 
+./parser testcase/basic 
+./parser < testcase/basic 
+logout
+cd hw2
+touch testcase/switch
+vim testcase/switch 
+./parser < testcase/switch 
+golden_parser < testcase/switch 
+vim parser.y 
+make
+./parser < testcase/switch 
+golden_parser < testcase/switch 
+vim parser.y 
+make
+./parser <testcase/switch 
+diff <(./parser < testcase/switch) <(golden_parser < testcase/switch)
+vim testcase
+ls testcase
+logout
+cd hw2
+touch testcase/while
+vim testcase/while 
+diff <(./parser < testcase/while) <(golden_parser < testcase/while)
+./parser < testcase/while 
+vim scanner.l 
+vim testcase/scalar_decl.c 
+./parser < testcase/scalar_decl.c 
+vim testcase/scalar_decl.c 
+./parser < testcase/scalar_decl.c 
+diff <(./parser < testcase/scalar_decl.c) <(golden_parser < testcase/scalar_decl.c)
+vim testcase/scalar_decl.c 
+vim scanner.l 
+make
+./parser < testcase/scalar_decl.c 
+diff <(./parser < testcase/while) <(golden_parser < testcase/while)
+vim scanner.l 
+make
+vim testcase/scalar_decl.c 
+./parser < testcase/scalar_decl.c 
+diff <(./parser < testcase/scalar_decl.c) <(golden_parser < testcase/scalar_decl.c)
+vim testcase/scalar_decl.c 
+diff <(./parser < testcase/scalar_decl.c) <(golden_parser < testcase/scalar_decl.c)
+vim parser.y 
+logout
+cd hw2
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+./parser 
+vim parser.y 
+make
+./parser 
+vim parser.y 
+
+./parser 
+vim parser.y 
+make
+./parser < testcase/basic 
+logout
