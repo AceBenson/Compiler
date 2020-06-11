@@ -21,10 +21,8 @@ L [a-zA-Z_]
 <C_COMMENT_L>\n { BEGIN(INITIAL); }
 "/*"            { BEGIN(C_COMMENT);}
 <C_COMMENT>"*/" { BEGIN(INITIAL); }
-<C_COMMENT>\t {}
-<C_COMMENT>\n {}
-<C_COMMENT>.  {}
-fclose|clearerr|feof|ferror|fflush|fgetpos|fopen|fread|freopen|fseek|fsetpos|ftell|fwrite|remove|rename|rewind|setbuf|setvbuf|tmpfile|tmpnam|fprintf|printf|sprintf|vfprintf|vprintf|vsprintf|fscanf|scanf|sscanf|fgetc|fgets|fputc|fputs|getc|getchar|gets|putc|putchar|puts|ungetc|perror { char* tmp = strdup(yytext); yylval.sval = tmp; return(FUNCTION); }
+<C_COMMENT>[ \t\n.]   { }
+fclose|clearerr|feof|ferror|fflush|fgetpos|fopen|fread|freopen|fseek|fsetpos|ftell|fwrite|remove|rename|rewind|setbuf|setvbuf|tmpfile|tmpnam|fprintf|printf|sprintf|vfprintf|vprintf|vsprintf|fscanf|scanf|sscanf|fgetc|fgets|fputc|fputs|getc|getchar|gets|putc|putchar|puts|ungetc|perror {  yylval.sval = yytext; return(FUNCTION); }
 L?\"(\\.|[^\\"])*\" {  char* tmp = strdup(yytext); yylval.sval = tmp; return(STRING_LITERAL); }
 "auto"			{  return(AUTO); }
 "break"			{  return(BREAK); }

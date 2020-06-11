@@ -1,101 +1,3 @@
-ls
-mkdir ./ssh
-cd ./ssh/
-ls
-passwd
-logout
-cd ./ssh/
-ls
-ls -a
-touch authorized_keys
-cd ../
-ls
-rm -rf ssh/
-ls -a
-cd .ssh
-mkdir .ssh
-rm .ssh
-mkdir .ssh
-ls -a
-cd .ssh/
-ls
-touch authorized_keys
-cat id_rsa.pub authorized_keys 
-logout
-mkdir hw1
-ls
-logout
-golden_scanner 
-golden_scanner
-ls
-cd hw1/
-touch testcase_basic
-vim testcase_basic 
-golden_scanner testcase_basic 
-lex
-lex testcase_basic 
-ls
-flex testcase_basic 
-cd ../
-mkdir test
-cd test/
-touch count_line.l
-vim count_line.l 
-flex count_line.l 
-ls
-vim lex.yy.c 
-gcc lex.yy.c -lfl
-ls
-./a.out
-pwd
-ls
-touch blank.l && vim blank.l
-flex blank.l 
-ls
-vim blank.l 
-flex blank.l 
-vim count_line.l 
-touch exclusive.l && vim exclusive.l
-flex exclusive.l 
-ls
-gcc lex.yy.c -lfl
-ls
-./a.out
-cp exclusive.l inclusive.l
-vim inclusive.l 
-flex inclusive.l 
-vim inclusive.l 
-ls
-gcc lex.yy.c -lfl
-./a.out
-cd ../hw1/
-ls
-touch scanner.l
-flex scanner.l 
-vim scanner.l 
-flex scanner.l 
-ls
-gcc lex.yy.c -lfl
-ls
-./a.out < testcase_basic 
-git
-cd ../
-git init
-git add .
-git commit -m "create blank scanner.l and do some tests"
-git config --global user.email "bruce1198@gmail.com"
-git config --global user.name "kwang"
-git commit -m "create blank scanner.l and do some tests"
-cd hw1/
-ls
-touch testcase_basic.out
-vim testcase_basic.out 
-ls
-cd 
-git status
-git add .
-git commit -m "uplaod test.out'
-git commit -m "uplaod test.out"
 logout
 cd hw1/
 ls
@@ -1624,4 +1526,475 @@ vim parser.y
 vim parser.y 
 make
 ./parser < testcase/basic 
+logout
+cd hw2
+./parser 
+vim parser.y 
+vim scanner.l 
+vim parser.y 
+make
+touch testcase/error
+vim testcase/error 
+./parser < testcase/error 
+vim scanner.l 
+vim parser.y 
+make
+./parser < testcase/error 
+golden_parser < testcase/error 
+vim parser.y 
+make
+vim parser.y 
+make
+./parser < testcase/error 
+diff <(./parser < testcase/expr.c ) <(golden_parser < testcase/expr.c)
+vim parser.y 
+make
+./parser < testcase/scalar_decl.c 
+vim parser.y 
+cd ../
+git status
+git add .
+git commit -m "free ptr"
+logout
+cd hw2
+make
+./parser < testcase/expr.c 
+./parser < testcase/basic 
+make
+./parser < testcase/basic 
+make
+./parser < testcase/basic 
+make
+./parser < testcase/basic 
+make
+./parser < testcase/basic 
+make
+./parser < testcase/basic 
+make
+./parser < testcase/basic 
+make
+./parser < testcase/basic 
+logout
+cd hw2
+vim parser
+vim parser.y 
+cd ../
+mkdir hw3
+cp hw2/scanner.l hw3
+cp hw2/parser.y hw3
+cd hw3
+ls
+cp ../hw2/Makefile ./
+ls
+vim Makefile 
+logout
+cd hw2
+vim parser.y 
+make
+./parser < testcase/basic 
+vim parser.y 
+make
+logout
+cd hw2
+ls
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+./parser < testcase/basic 
+vim testcase/castle.c 
+./parser < testcase/basic 
+./parser < testcase/castle.c 
+vim parser.y 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+vim parser.y 
+vim testcase/castle.c 
+vim testcase/basic 
+./parser < testcase/basic 
+vim parser.y 
+make
+./parser < testcase/basic 
+./parser < testcase/castle.c 
+vim parser.y 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim scanner.l 
+vim ../hw1/scanner.l 
+vim scanner.l 
+make
+vim scanner.l 
+make
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+vim parser.y 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+vim parser.y 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim parser.y 
+make
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+vim scanner.l 
+vim parser.y 
+make
+./parser < testcase/castle.c 
+vim testcase/castle.c 
+./parser < testcase/castle.c 
+logout
+cd hw2
+vim parser.y 
+ls testcase
+vim testcase/basic 
+./parser < testcase/basic 
+vim parser.y 
+logout
+cd hw2
+golden_parser 
+vim parser.y 
+./parser 
+vim parser.y 
+make
+./parser < testcase/basic 
+cd hw2
+vim testcase
+ls testcase
+./parser < testcase/array_decl.c 
+diff <(./parser < testcase/array_decl.c ) <(golden_parser < testcase/array_decl.c )
+diff <(./parser < testcase/basic ) <(golden_parser < testcase/basic )
+diff <(./parser < testcase/castle.c ) <(golden_parser < testcase/castle.c )
+vim testcase/castle.c 
+diff <(./parser < testcase/castle.c ) <(golden_parser < testcase/castle.c )
+ls testcase
+diff <(./parser < testcase/expr.c ) <(golden_parser < testcase/expr.c )
+diff <(./parser < testcase/scalar_decl.c ) <(golden_parser < testcase/scalar_decl.c )
+diff <(./parser < testcase/switch ) <(golden_parser < testcase/switch )
+diff <(./parser < testcase/test.c ) <(golden_parser < testcase/test.c )
+vim testcase/test.c 
+diff <(./parser < testcase/test.c ) <(golden_parser < testcase/test.c )
+ls testcase
+vim testcase/while 
+diff <(./parser < testcase/while ) <(golden_parser < testcase/while )
+vim parser.y 
+logout
+cd hw3
+ls
+cd ../hw2
+vim parser.y 
+logout
+cd hw3
+vim parser.y 
+cd hw3
+vim parser.y 
+cd hw3
+ls
+ls Testcase/
+vim Testcase/Basic/0.c 
+vim parser.y 
+logout
+cd hw3
+cd hw3
+vim parser.y 
+ls ../../
+ls ../../ta
+vim parser.y 
+make
+ls
+vim Makefile 
+make
+vim Makefile 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+cd hw3
+ls
+logout
+cd hw3
+vim parser.y 
+logout
+cd hw3
+ls
+vim parser.y 
+logout
+cd hw3
+ls
+logout
+cd hw3
+vim test.c 
+cd hw3
+vim parser.y 
+cd hw2
+ls
+cp parser.y parser_backup.y
+ls
+vim parser.y 
+cd hw3
+make
+./codegen < Testcase/Branch/0.c 
+touch test.c
+vim test.c
+make
+./codegen < test.c 
+vim test.c 
+./codegen < test.c 
+make
+./codegen < test.c 
+vim test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+./codegen < Testcase/Branch/0.c 
+make
+vim y.output 
+make
+./codegen < Testcase/Branch/0.c 
+make
+./codegen < Testcase/Branch/0.c 
+make
+./codegen < Testcase/Branch/0.c 
+cd ../hw2
+make
+vim y.output 
+cd ../hw3
+make
+./codegen < Testcase/Branch/0.c 
+make
+vim y.output 
+make
+./codegen < Testcase/Branch/0.c 
+vim Testcase/Branch/0.c 
+make
+./codegen < Testcase/Branch/0.c 
+make
+./codegen < Testcase/Branch/0.c 
+./codegen < test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+cd hw3
+vim parser.y 
+logout
+cd hw3
+./codegen < test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+vim test.c 
+logout
+cd hw3
+vim parser.y 
+cd hw3
+./codegen < test.c 
+make
+./codegen < test.c 
+make
+./codegen < test.c 
+cd hw3
+vim parser.y 
+cd hw3
+vim parser.y 
+make
+./codegen < test.c 
+vim parser.y 
+make
+vim parser.y 
+./codegen < test.c 
+vim parser.y 
+make
+vim parser.y 
+make
+./codegen < test.c 
+vim test.c 
+vim parser.y 
+make
+./codegen < test.c 
+vim test.c 
+./codegen < test.c 
+vim parser.y 
+make
+./codegen < test.c 
+vim parser.y 
+make
+./codegen < test.c 
+vim parser.y 
+make
+vim codegen.S 
+vim parser.y 
+make
+vim parser.y 
+make
+./codegen < test.c 
+vim parser.y 
+make
+./codegen < test.c 
+vim parser.y 
+make
+./codegen < test.c 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./codegen < test.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < test.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < test.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < test.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < test.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < test.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < test.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/Basic/0.c 
+vim codegen.S 
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make\
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+./codegen < Testcase/Basic/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/Basic/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/Basic/0.c 
+vim parser.y 
+vim codegen.S 
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+../hw2/parser < Testcase/ArithmeticExpression/0.c 
+vim parser.y 
+make
+vim parser.y 
+make
+../hw2/parser < Testcase/ArithmeticExpression/0.c 
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim parser.y 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+logout
+cd hw3
+make
+./codegen < test.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < test.c 
+vim codegen.S 
+vim test.c 
+vim Testcase/Basic/0.c 
+vim Testcase/Basic/1.c 
+ls Testcase/
+ls Testcase/ArithmeticExpression/
+vim Testcase/ArithmeticExpression/0.c 
 logout

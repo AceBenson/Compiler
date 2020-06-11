@@ -51,7 +51,7 @@
 %left <ival> POINTSAT '.' 
 %right THEN ELSE
 
-%type <sval> scalar_declaration array_declaration const_declaration function_declaration array_declarator function_declarator IDENTIFIER STRING_LITERAL FUNCTION constant primary_expression postfix_expression unary_operator unary_expression cast_expression multiplicative_expression additive_expression shift_expression relational_expression equality_expression and_expression exclusive_or_expression inclusive_or_expression logical_and_expression logical_or_expression conditional_expression assignment_expression expression expression_statement statement argument_expression_list compound_statement compound_list selection_statement jump_statement iteration_statement labeled_statement assignment_operator declaration declaration_specifiers init_declarator_list init_declarator type_specifier declarator initializer initializer_list direct_declarator declaration_list identifier_list parameter_type_list parameter_list parameter_declaration declaration_specifiers function_definition external_declaration translation_unit program
+%type <sval> IDENTIFIER STRING_LITERAL FUNCTION constant primary_expression postfix_expression unary_operator unary_expression cast_expression multiplicative_expression additive_expression shift_expression relational_expression equality_expression and_expression exclusive_or_expression inclusive_or_expression logical_and_expression logical_or_expression conditional_expression assignment_expression expression expression_statement statement argument_expression_list compound_statement compound_list selection_statement jump_statement iteration_statement labeled_statement assignment_operator declaration declaration_specifiers init_declarator_list init_declarator type_specifier declarator initializer initializer_list direct_declarator declaration_list identifier_list parameter_type_list parameter_list parameter_declaration declaration_specifiers function_definition external_declaration translation_unit program
 %type <ival> CONSTANT
 %type <dval> FCONSTANT
 %type <cval> CCONSTANT
@@ -125,27 +125,38 @@ expression_statement
 	| expression ';' 	{ char* buf=get_buf(); sprintf(buf, "%s;", $1); $$=buf; free($1); }
 	;
 declaration
-	: scalar_declaration ';'{ char* buf=get_buf(); sprintf(buf, "<scalar_decl>%s;</scalar_decl>", $1); $$=buf; free($1); }
-	| array_declaration ';' { char* buf=get_buf(); sprintf(buf, "<array_decl>%s;</array_decl>", $1); $$ = buf; free($1); }
-	| const_declaration ';' { char* buf=get_buf(); sprintf(buf, "<const_decl>%s;</const_decl>", $1); $$ = buf; free($1); }
-	| function_declaration ';' { char* buf=get_buf(); sprintf(buf, "<func_decl>%s;</func_decl>", $1); $$ = buf; free($1); }
-	;
-scalar_declaration
-	: declaration_specifiers { $$ = $1; }
-	| declaration_specifiers init_declarator_list {char* buf=get_buf(); sprintf(buf, "%s%s", $1, $2); $$= buf; free($1); free($2); }
-	;
-array_declaration
-	: declaration_specifiers {}
-	| declaration_specifiers init_declarator_list {}
-const_declaration
-	: CONST scalar_declaration { char* buf=get_buf(); sprintf(buf, "const%s", $2); $$=buf; free($2); }
-	| CONST array_declaration { char* buf=get_buf(); sprintf(buf, "const%s", $2); $$ = buf; free($2); }
-function_declaration
-	: declaration_specifiers function_declarator {}
+	: declaration_specifiers ';' 
+	{ 
+		char* buf=get_buf();
+		switch(type) { 
+			case 0: sprintf(buf, "<scalar_decl>%s;</scalar_decl>", $1); break;
+			case 1: sprintf(buf, "<array_decl>%s;</array_decl>", $1); break;
+			case 2: sprintf(buf, "<func_decl>%s;</func_decl>", $1); break;
+			case 3: sprintf(buf, "<const_decl>%s;</const_decl>", $1); break;
+		}
+		type=0;
+		$$=buf;
+		free($1);
+	}
+	| declaration_specifiers init_declarator_list ';' 
+	{ 
+		char* buf=get_buf();
+		switch(type) {
+			case 0: sprintf(buf, "<scalar_decl>%s%s;</scalar_decl>", $1, $2); break;
+			case 1: sprintf(buf, "<array_decl>%s%s;</array_decl>", $1, $2); break;
+			case 2: sprintf(buf, "<func_decl>%s%s;</func_decl>", $1, $2); break;
+			case 3: sprintf(buf, "<const_decl>%s%s;</const_decl>", $1, $2); break;		
+		}
+		type=0;
+		$$=buf; 
+		free($1);
+		free($2);
+	}
 	;
 declaration_specifiers
 	: type_specifier { char* buf=get_buf(); strcpy(buf, $1); $$=buf; free($1); }
 	| type_specifier declaration_specifiers { char* buf=get_buf(); sprintf(buf, "%s%s", $1, $2); $$=buf; free($1); free($2); }
+	| CONST declaration_specifiers { type=3; char* buf=get_buf(); sprintf(buf, "const%s", $2); $$=buf; free($2); }
 	;
 type_specifier
 	: VOID 		{ char* buf=get_nbuf(5); strcpy(buf, "void"); $$=buf; }
@@ -168,19 +179,14 @@ init_declarator
 	;
 declarator
 	: direct_declarator { $$=$1; }
-	| array_declarator { $$=$1; }
-	| function_declarator {$$=$1;}
-	| '(' declarator ')'
 	;
 direct_declarator
 	: IDENTIFIER { if(type!=3) type=0; $$=$1; }
-	;
-array_declarator
-	: declarator '[' conditional_expression ']' { char* buf=get_buf(); sprintf(buf, "%s[%s]", $1, $3); $$ =buf; free($1); free($3); }
-	;
-function_declarator
-	: declarator '(' parameter_type_list ')' {char*buf=get_buf(); sprintf(buf, "%s(%s)", $1, $3); $$=buf; free($1); free($3); }
-	| declarator '(' ')' {char*buf=get_buf(); sprintf(buf, "%s()", $1); $$=buf; free($1); }
+	| '(' declarator ')' { char* buf=get_buf(); sprintf(buf, "(%s)", $2); $$=buf; free($2); }
+	| direct_declarator '[' conditional_expression ']' { if(type!=3) type=1; char* buf = get_buf(); sprintf(buf, "%s[%s]", $1, $3); $$=buf; free($1); free($3); }
+	| direct_declarator '(' identifier_list ')' { type=2; char* buf = get_buf(); sprintf(buf, "%s(%s)", $1, $3); $$=buf; free($1); free($3); }
+	| direct_declarator '(' parameter_type_list ')' { type=2; char* buf = get_buf(); sprintf(buf, "%s(%s)", $1, $3); $$=buf; free($1); free($3); }
+	| direct_declarator '(' ')' { type=2; char* buf = get_buf(); sprintf(buf, "%s()", $1); $$=buf; free($1); }
 	;
 parameter_type_list
 	: parameter_list { $$=$1; }

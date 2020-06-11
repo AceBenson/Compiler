@@ -2,7 +2,7 @@
 int a;
 int b;
 
-main()
+int main()
 {
    int i;
    int j;

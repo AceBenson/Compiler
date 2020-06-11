@@ -17,5 +17,11 @@ int main()
 	if(a==0) {
 		a = 5;
 	}
+	if(table[i][5]==0) {
+		return 1;
+	}
+	for(;;) {
+		
+	}
 	return 0;	
 }
