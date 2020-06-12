@@ -1,8 +1,3 @@
-./a.out < testcase1
-./a.out < testcase_basic
-vim scanner.l 
-cd /home/
-ls
 cd ta/
 cd 
 cd hw1/
@@ -1997,4 +1992,9 @@ vim parser.y
 make
 ./codegen < Testcase/Branch/0.c 
 vim codegen.S 
+logout
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/bruce1198/Compiler.git
+git push -u origin master
 logout

@@ -154,7 +154,9 @@ compound_list
 statement
 	: compound_statement 	{ }
 	| expression_statement 	{ }
-	| selection_statement 	{ }
+	| selection_statement 	{ 
+		fprintf(fptr, "Exit:\n");
+	}
 	| labeled_statement 	{ }
 	| iteration_statement 	{ }
 	| jump_statement 		{ }
@@ -173,17 +175,20 @@ selection_statement
 		cur_scope++; 
 	} compound_statement { 
 		fprintf(fptr, "\tj Exit\n");
+		fprintf(fptr, "Else:\n");
 	}
 	| selection_statement ELSE { 
-		fprintf(fptr, "Else: ");
 		cur_scope++; 
 	} compound_statement { 
-		fprintf(fptr, "Exit :");
 	}
 	| SWITCH '(' expression ')' { cur_scope++; } compound_statement { }
 	;
 iteration_statement
-	: WHILE '(' expression ')' statement { }
+	: WHILE '(' expression ')' {
+		fprintf(fptr, "Loop:\n");
+	} statement { 
+		fprintf(fptr, "\tbeq , , Loop");
+	}
 	| DO statement WHILE '(' expression ')' ';' { }
 	| FOR '(' expression_statement expression_statement ')' statement { }
 	| FOR '(' expression_statement expression_statement expression ')' statement { }
@@ -245,8 +250,8 @@ init_declarator
 	| func_definitor { type=T_FUNCTION; $$=$1; }
 	| declarator '=' initializer { 
 		symbol* id = lookup($1);
-		fprintf(fptr, "\tsw  t0, %d(fp) \n", id->offset*(-4)-8);
-		fprintf(fptr, "\n");
+		//fprintf(fptr, "\tsw  t0, %d(fp) \n", id->offset*(-4)-8);
+		//fprintf(fptr, "\n");
 	}
 	;
 func_definitor
@@ -528,12 +533,12 @@ primary_expression
 			switch(id->mode) {
 				case ARGUMENT_MODE:					
 					f = lookup(id->funcName);
-					fprintf(fptr, "\tlw t0, %d(fp)\n", f->totalArgs *(-4)-8 +id->offset*(-4)-4);
+					fprintf(fptr, "\tlw t0, %d(s0)\n", f->totalArgs *(-4)-48 +id->offset*(-4)-4);
 					fprintf(fptr, "\taddi sp, sp, -4\n");
 					fprintf(fptr, "\tsw t0, 0(sp)\n");
 				break;
 		  		case LOCAL_MODE:
-					fprintf(fptr, "\tlw  t0, %d(fp) \n",id->offset*(-4)-8);
+					fprintf(fptr, "\tlw  t0, %d(s0) \n",id->offset*(-4)-48);
 					fprintf(fptr, "\taddi sp, sp, -4\n");
 					fprintf(fptr, "\tsw t0, 0(sp)\n");
 					fprintf(fptr, "\n");
@@ -574,16 +579,25 @@ void handleParams(char* name) {
 
 void funcBegin(char* name) {
 	fprintf(fptr, "%s:\n", name);
-	fprintf(fptr, "\tsw fp, -4(sp)\n");
-	fprintf(fptr, "\tsw ra, -8(sp)\n");
-	fprintf(fptr, "\taddi sp, sp, -8\n");
+	fprintf(fptr, "\tsw s0, -4(sp)\n");
+	fprintf(fptr, "\taddi sp, sp, -4\n");
+	fprintf(fptr, "\taddi s0, sp, 0\n");
+	fprintf(fptr, "\tsw sp, -4(s0)\n");
+	int i;
+	for(i=1; i<12; i++)
+		fprintf(fptr, "\tsw s%d, %d(s0)\n", i, -4+(-4)*i);
+	fprintf(fptr, "\taddi sp, s0, %d\n", -48);
 	fprintf(fptr, "\n");
 }
 
 void funcEnd(char* name) {
-	fprintf(fptr, "\tlw ra, -4(fp)\n");
-	fprintf(fptr, "\tlw fp, 0(fp)\n");	
-	fprintf(fptr, "\taddi sp, sp, 8\n");
+	int i;
+	for(i=11; i>=1; i--)
+		fprintf(fptr, "\tlw s%d, %d(s0)\n", i, -4+(-4)*i);
+	fprintf(fptr, "\tlw sp, -4(s0)\n");
+	fprintf(fptr, "\taddi sp, sp, 4\n");
+	fprintf(fptr, "\tlw s0, -4(sp)\n");	
+	fprintf(fptr, "\n");
 	fprintf(fptr, "\tjalr zero, 0(ra)\n");
 	offset = 0;
 }
@@ -591,7 +605,7 @@ void funcEnd(char* name) {
 void callFunc(char* name, int cnt) {
 	//printf("%s's argc: %d", name, cnt);
 	int i;
-	for(i=0; i<cnt; i++) {
+	for(i=cnt-1; i>=0; i--) {
 		fprintf(fptr, "\tlw a%d, 0(sp)\n", i);
 		fprintf(fptr, "\taddi sp, sp, 4\n");
 	}
