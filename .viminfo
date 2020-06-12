@@ -11,19 +11,27 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/funcEnd
+~MSle0~/xor
 
 # Last Substitute Search Pattern:
-~MSle0&s0
+~MSle0&external_declaration
 
 # Last Substitute String:
-$fp
+$ext
 
 # Command Line History (newest to oldest):
-:x
-|2,0,1591905486,,"x"
 :q
-|2,0,1591905450,,"q"
+|2,0,1591937757,,"q"
+:x
+|2,0,1591937676,,"x"
+:X
+|2,0,1591935493,,"X"
+:169
+|2,0,1591934746,,"169"
+:%s/external_declaration/ext
+|2,0,1591905937,,"%s/external_declaration/ext"
+:%s/translation_unit/exts
+|2,0,1591905921,,"%s/translation_unit/exts"
 :w
 |2,0,1591905233,,"w"
 :%s/s0/fp
@@ -112,14 +120,20 @@ $fp
 |2,0,1586500589,,"tabf testcase2"
 :s
 |2,0,1586492726,,"s"
-:tabn
-|2,0,1586489247,,"tabn"
-:tapb
-|2,0,1586489240,,"tapb"
-:tabf testcase_basic.out
-|2,0,1586489216,,"tabf testcase_basic.out"
 
 # Search String History (newest to oldest):
+?/xor
+|2,1,1591937359,47,"xor"
+?/conflict
+|2,1,1591935801,47,"conflict"
+?/IF
+|2,1,1591935752,47,"IF"
+? external_declaration
+|2,1,1591905937,,"external_declaration"
+? translation_unit
+|2,1,1591905921,,"translation_unit"
+?/global
+|2,1,1591905638,47,"global"
 ?/funcEnd
 |2,1,1591905456,47,"funcEnd"
 ?/FUNCTION
@@ -204,22 +218,10 @@ $fp
 |2,1,1591869521,47,"funcHe"
 ?/declaration_spec
 |2,1,1591869910,47,"declaration_spec"
-?/global
-|2,1,1591869396,47,"global"
 ?/function_
 |2,1,1591868491,47,"function_"
 ?/function_pa
 |2,1,1591868487,47,"function_pa"
-?/func
-|2,1,1591868471,47,"func"
-?/->type
-|2,1,1591867609,47,"->type"
-?/parameter
-|2,1,1591784553,47,"parameter"
-? function_definition
-|2,1,1591784429,,"function_definition"
-?/array_init
-|2,1,1591711485,47,"array_init"
 
 # Expression History (newest to oldest):
 
@@ -228,383 +230,392 @@ $fp
 # Debug Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
-		fprintf(fptr, "\taddi sp, sp, 8\n");
-|3,1,0,1,1,0,1591905463,"	fprintf(fptr, \"\\taddi sp, sp, 8\\n\");"
+"0	CHAR	0
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+			fprintf(fptr, "\taddi sp, sp, 4\n");
+			fprintf(fptr, "\taddi t0, t0, 1\n");
+			fprintf(fptr, "\taddi sp, sp, -4\n");
+			fprintf(fptr, "\tsw t0, 0(sp)\n");
+			fprintf(fptr, "\n");
+		
+|3,0,0,0,7,0,1591937634,"	fprintf(fptr, \"\\tlw t0, 0(sp)\\n\");","		fprintf(fptr, \"\\taddi sp, sp, 4\\n\");","		fprintf(fptr, \"\\taddi t0, t0, 1\\n\");","		fprintf(fptr, \"\\taddi sp, sp, -4\\n\");","		fprintf(fptr, \"\\tsw t0, 0(sp)\\n\");","		fprintf(fptr, \"\\n\");","	"
 "1	LINE	0
-			printf("%s = ", $1);
-|3,0,1,1,1,0,1591905180,"		printf(\"%s = \", $1);"
+			fprintf(fptr, "\taddi sp, sp, 4\n");
+|3,0,1,1,1,0,1591937599,"		fprintf(fptr, \"\\taddi sp, sp, 4\\n\");"
 "2	LINE	0
+			fprintf(fptr, "\tlw t1, 0(sp)\n");
+|3,0,2,1,1,0,1591937597,"		fprintf(fptr, \"\\tlw t1, 0(sp)\\n\");"
+"3	LINE	0
+		: additive_expression '+' multiplicative_expression {
+|3,0,3,1,1,0,1591936111,"	: additive_expression '+' multiplicative_expression {"
+"4	LINE	0
+	tive_expression
+|3,0,4,1,1,0,1591936110,"tive_expression"
+"5	LINE	0
+			printf("%s = ", $1);
+|3,0,5,1,1,0,1591905180,"		printf(\"%s = \", $1);"
+"6	LINE	0
+	        	
+|3,0,6,1,1,0,1591934750,"        	"
+"7	LINE	0
+			printf("%s = ", $1);
+|3,0,7,1,1,0,1591905180,"		printf(\"%s = \", $1);"
+"8	LINE	0
 		} symbol;
 		void codegen();
-|3,0,2,1,2,0,1591904800,"	} symbol;","	void codegen();"
-"3	LINE	0
-		 Constant;
-|3,0,3,1,1,0,1591904799,"	 Constant;"
-"4	CHAR	0
-	typedef struct Constant {
-			int ic;
-			char cc;
-			double dc;
-			int type;
-		}
-|3,0,4,0,6,0,1591904798,"typedef struct Constant {","		int ic;","		char cc;","		double dc;","		int type;","	}"
-"5	LINE	0
-		fprintf(fptr, "\tli a1, 27\n");
-|3,0,5,1,1,0,1591904074,"	fprintf(fptr, \"\\tli a1, 27\\n\");"
-"6	LINE	0
-		fprintf(fptr, "\tli a0, 1\n");
-|3,0,6,1,1,0,1591904073,"	fprintf(fptr, \"\\tli a0, 1\\n\");"
-"7	LINE	0
-		fprintf(fptr, "\taddi sp, sp, 4\n");
-|3,0,7,1,1,0,1591903455,"	fprintf(fptr, \"\\taddi sp, sp, 4\\n\");"
-"8	LINE	0
-		fprintf(fptr, "\taddi fp, sp, 0\n");
-|3,0,8,1,1,0,1591903371,"	fprintf(fptr, \"\\taddi fp, sp, 0\\n\");"
+|3,0,8,1,2,0,1591904800,"	} symbol;","	void codegen();"
 "9	LINE	0
-		fprintf(fptr, "\taddi sp, sp, -4\n");
-|3,0,9,1,1,0,1591903352,"	fprintf(fptr, \"\\taddi sp, sp, -4\\n\");"
-"-	CHAR	0
-	c
-|3,0,36,0,1,0,1591904653,"c"
+		 Constant;
+|3,0,9,1,1,0,1591904799,"	 Constant;"
+""-	CHAR	0
+	f
+|3,1,36,0,1,0,1591937661,"f"
 
 # File marks:
-'0  507  33  ~/hw3/parser.y
-|4,48,507,33,1591905486,"~/hw3/parser.y"
-'1  153  11  ~/hw3/codegen.S
-|4,49,153,11,1591905450,"~/hw3/codegen.S"
-'2  515  37  ~/hw3/parser.y
-|4,50,515,37,1591905335,"~/hw3/parser.y"
-'3  514  37  ~/hw3/parser.y
-|4,51,514,37,1591905335,"~/hw3/parser.y"
-'4  81  0  ~/hw3/codegen.S
-|4,52,81,0,1591905160,"~/hw3/codegen.S"
-'5  81  0  ~/hw3/codegen.S
-|4,53,81,0,1591905160,"~/hw3/codegen.S"
-'6  512  2  ~/hw3/parser.y
-|4,54,512,2,1591905133,"~/hw3/parser.y"
-'7  503  2  ~/hw3/parser.y
-|4,55,503,2,1591905133,"~/hw3/parser.y"
-'8  511  2  ~/hw3/parser.y
-|4,56,511,2,1591905133,"~/hw3/parser.y"
-'9  503  2  ~/hw3/parser.y
-|4,57,503,2,1591905133,"~/hw3/parser.y"
+'0  95  0  ~/hw3/codegen.S
+|4,48,95,0,1591937757,"~/hw3/codegen.S"
+'1  497  2  ~/hw3/parser.y
+|4,49,497,2,1591937676,"~/hw3/parser.y"
+'2  48  0  ~/hw3/codegen.S
+|4,50,48,0,1591937500,"~/hw3/codegen.S"
+'3  48  0  ~/hw3/codegen.S
+|4,51,48,0,1591937500,"~/hw3/codegen.S"
+'4  383  22  ~/hw3/parser.y
+|4,52,383,22,1591937472,"~/hw3/parser.y"
+'5  383  22  ~/hw3/parser.y
+|4,53,383,22,1591937472,"~/hw3/parser.y"
+'6  54  1  ~/hw3/codegen.S
+|4,54,54,1,1591937352,"~/hw3/codegen.S"
+'7  54  1  ~/hw3/codegen.S
+|4,55,54,1,1591937352,"~/hw3/codegen.S"
+'8  54  1  ~/hw3/codegen.S
+|4,56,54,1,1591937352,"~/hw3/codegen.S"
+'9  54  1  ~/hw3/codegen.S
+|4,57,54,1,1591937352,"~/hw3/codegen.S"
 
 # Jumplist (newest first):
--'  507  33  ~/hw3/parser.y
-|4,39,507,33,1591905486,"~/hw3/parser.y"
--'  139  2  ~/hw3/parser.y
-|4,39,139,2,1591905458,"~/hw3/parser.y"
--'  132  2  ~/hw3/parser.y
-|4,39,132,2,1591905458,"~/hw3/parser.y"
--'  125  2  ~/hw3/parser.y
-|4,39,125,2,1591905457,"~/hw3/parser.y"
--'  118  2  ~/hw3/parser.y
-|4,39,118,2,1591905457,"~/hw3/parser.y"
--'  32  6  ~/hw3/parser.y
-|4,39,32,6,1591905456,"~/hw3/parser.y"
--'  1  0  ~/hw3/parser.y
-|4,39,1,0,1591905456,"~/hw3/parser.y"
--'  153  11  ~/hw3/codegen.S
-|4,39,153,11,1591905450,"~/hw3/codegen.S"
--'  153  11  ~/hw3/codegen.S
-|4,39,153,11,1591905450,"~/hw3/codegen.S"
+-'  95  0  ~/hw3/codegen.S
+|4,39,95,0,1591937757,"~/hw3/codegen.S"
 -'  1  0  ~/hw3/codegen.S
-|4,39,1,0,1591905342,"~/hw3/codegen.S"
+|4,39,1,0,1591937685,"~/hw3/codegen.S"
+-'  497  2  ~/hw3/parser.y
+|4,39,497,2,1591937676,"~/hw3/parser.y"
+-'  497  2  ~/hw3/parser.y
+|4,39,497,2,1591937676,"~/hw3/parser.y"
+-'  485  28  ~/hw3/parser.y
+|4,39,485,28,1591937661,"~/hw3/parser.y"
+-'  485  28  ~/hw3/parser.y
+|4,39,485,28,1591937661,"~/hw3/parser.y"
+-'  486  2  ~/hw3/parser.y
+|4,39,486,2,1591937547,"~/hw3/parser.y"
+-'  486  2  ~/hw3/parser.y
+|4,39,486,2,1591937547,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591937505,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591937505,"~/hw3/parser.y"
+-'  48  0  ~/hw3/codegen.S
+|4,39,48,0,1591937500,"~/hw3/codegen.S"
+-'  48  0  ~/hw3/codegen.S
+|4,39,48,0,1591937500,"~/hw3/codegen.S"
+-'  48  0  ~/hw3/codegen.S
+|4,39,48,0,1591937500,"~/hw3/codegen.S"
 -'  1  0  ~/hw3/codegen.S
-|4,39,1,0,1591905342,"~/hw3/codegen.S"
--'  515  37  ~/hw3/parser.y
-|4,39,515,37,1591905335,"~/hw3/parser.y"
--'  514  37  ~/hw3/parser.y
-|4,39,514,37,1591905335,"~/hw3/parser.y"
--'  514  37  ~/hw3/parser.y
-|4,39,514,37,1591905335,"~/hw3/parser.y"
--'  1  0  ~/hw3/parser.y
-|4,39,1,0,1591905165,"~/hw3/parser.y"
--'  1  0  ~/hw3/parser.y
-|4,39,1,0,1591905165,"~/hw3/parser.y"
--'  81  0  ~/hw3/codegen.S
-|4,39,81,0,1591905160,"~/hw3/codegen.S"
--'  81  0  ~/hw3/codegen.S
-|4,39,81,0,1591905160,"~/hw3/codegen.S"
--'  81  0  ~/hw3/codegen.S
-|4,39,81,0,1591905160,"~/hw3/codegen.S"
--'  81  0  ~/hw3/codegen.S
-|4,39,81,0,1591905160,"~/hw3/codegen.S"
--'  81  0  ~/hw3/codegen.S
-|4,39,81,0,1591905160,"~/hw3/codegen.S"
--'  81  0  ~/hw3/codegen.S
-|4,39,81,0,1591905160,"~/hw3/codegen.S"
+|4,39,1,0,1591937477,"~/hw3/codegen.S"
 -'  1  0  ~/hw3/codegen.S
-|4,39,1,0,1591905150,"~/hw3/codegen.S"
+|4,39,1,0,1591937477,"~/hw3/codegen.S"
+-'  383  22  ~/hw3/parser.y
+|4,39,383,22,1591937472,"~/hw3/parser.y"
+-'  383  22  ~/hw3/parser.y
+|4,39,383,22,1591937472,"~/hw3/parser.y"
+-'  383  22  ~/hw3/parser.y
+|4,39,383,22,1591937472,"~/hw3/parser.y"
+-'  383  22  ~/hw3/parser.y
+|4,39,383,22,1591937472,"~/hw3/parser.y"
+-'  383  22  ~/hw3/parser.y
+|4,39,383,22,1591937472,"~/hw3/parser.y"
+-'  383  22  ~/hw3/parser.y
+|4,39,383,22,1591937472,"~/hw3/parser.y"
+-'  342  25  ~/hw3/parser.y
+|4,39,342,25,1591937361,"~/hw3/parser.y"
+-'  342  25  ~/hw3/parser.y
+|4,39,342,25,1591937361,"~/hw3/parser.y"
+-'  342  25  ~/hw3/parser.y
+|4,39,342,25,1591937361,"~/hw3/parser.y"
+-'  342  25  ~/hw3/parser.y
+|4,39,342,25,1591937361,"~/hw3/parser.y"
+-'  342  25  ~/hw3/parser.y
+|4,39,342,25,1591937361,"~/hw3/parser.y"
+-'  342  25  ~/hw3/parser.y
+|4,39,342,25,1591937361,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591937359,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591937359,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591937359,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591937359,"~/hw3/parser.y"
+-'  54  1  ~/hw3/codegen.S
+|4,39,54,1,1591937352,"~/hw3/codegen.S"
+-'  54  1  ~/hw3/codegen.S
+|4,39,54,1,1591937352,"~/hw3/codegen.S"
+-'  54  1  ~/hw3/codegen.S
+|4,39,54,1,1591937352,"~/hw3/codegen.S"
+-'  54  1  ~/hw3/codegen.S
+|4,39,54,1,1591937352,"~/hw3/codegen.S"
+-'  54  1  ~/hw3/codegen.S
+|4,39,54,1,1591937352,"~/hw3/codegen.S"
+-'  54  1  ~/hw3/codegen.S
+|4,39,54,1,1591937352,"~/hw3/codegen.S"
+-'  54  1  ~/hw3/codegen.S
+|4,39,54,1,1591937352,"~/hw3/codegen.S"
 -'  1  0  ~/hw3/codegen.S
-|4,39,1,0,1591905150,"~/hw3/codegen.S"
+|4,39,1,0,1591937268,"~/hw3/codegen.S"
 -'  1  0  ~/hw3/codegen.S
-|4,39,1,0,1591905150,"~/hw3/codegen.S"
+|4,39,1,0,1591937268,"~/hw3/codegen.S"
 -'  1  0  ~/hw3/codegen.S
-|4,39,1,0,1591905150,"~/hw3/codegen.S"
--'  512  2  ~/hw3/parser.y
-|4,39,512,2,1591905133,"~/hw3/parser.y"
--'  503  2  ~/hw3/parser.y
-|4,39,503,2,1591905133,"~/hw3/parser.y"
--'  511  2  ~/hw3/parser.y
-|4,39,511,2,1591905133,"~/hw3/parser.y"
--'  503  2  ~/hw3/parser.y
-|4,39,503,2,1591905133,"~/hw3/parser.y"
--'  503  2  ~/hw3/parser.y
-|4,39,503,2,1591905133,"~/hw3/parser.y"
--'  511  2  ~/hw3/parser.y
-|4,39,511,2,1591905133,"~/hw3/parser.y"
--'  503  2  ~/hw3/parser.y
-|4,39,503,2,1591905133,"~/hw3/parser.y"
--'  503  2  ~/hw3/parser.y
-|4,39,503,2,1591905133,"~/hw3/parser.y"
--'  417  1  ~/hw3/parser.y
-|4,39,417,1,1591905100,"~/hw3/parser.y"
--'  409  1  ~/hw3/parser.y
-|4,39,409,1,1591905100,"~/hw3/parser.y"
--'  417  1  ~/hw3/parser.y
-|4,39,417,1,1591905100,"~/hw3/parser.y"
--'  409  1  ~/hw3/parser.y
-|4,39,409,1,1591905100,"~/hw3/parser.y"
--'  409  1  ~/hw3/parser.y
-|4,39,409,1,1591905100,"~/hw3/parser.y"
--'  417  1  ~/hw3/parser.y
-|4,39,417,1,1591905100,"~/hw3/parser.y"
--'  409  1  ~/hw3/parser.y
-|4,39,409,1,1591905100,"~/hw3/parser.y"
--'  409  1  ~/hw3/parser.y
-|4,39,409,1,1591905100,"~/hw3/parser.y"
--'  244  14  ~/hw3/parser.y
-|4,39,244,14,1591905092,"~/hw3/parser.y"
--'  234  27  ~/hw3/parser.y
-|4,39,234,27,1591905092,"~/hw3/parser.y"
--'  245  14  ~/hw3/parser.y
-|4,39,245,14,1591905092,"~/hw3/parser.y"
--'  244  14  ~/hw3/parser.y
-|4,39,244,14,1591905092,"~/hw3/parser.y"
--'  234  27  ~/hw3/parser.y
-|4,39,234,27,1591905092,"~/hw3/parser.y"
--'  245  14  ~/hw3/parser.y
-|4,39,245,14,1591905092,"~/hw3/parser.y"
--'  234  27  ~/hw3/parser.y
-|4,39,234,27,1591905092,"~/hw3/parser.y"
--'  245  14  ~/hw3/parser.y
-|4,39,245,14,1591905092,"~/hw3/parser.y"
--'  234  27  ~/hw3/parser.y
-|4,39,234,27,1591905092,"~/hw3/parser.y"
--'  244  14  ~/hw3/parser.y
-|4,39,244,14,1591905092,"~/hw3/parser.y"
--'  234  27  ~/hw3/parser.y
-|4,39,234,27,1591905092,"~/hw3/parser.y"
--'  245  14  ~/hw3/parser.y
-|4,39,245,14,1591905092,"~/hw3/parser.y"
--'  234  27  ~/hw3/parser.y
-|4,39,234,27,1591905092,"~/hw3/parser.y"
--'  245  14  ~/hw3/parser.y
-|4,39,245,14,1591905092,"~/hw3/parser.y"
--'  234  27  ~/hw3/parser.y
-|4,39,234,27,1591905092,"~/hw3/parser.y"
--'  231  0  ~/hw3/parser.y
-|4,39,231,0,1591905090,"~/hw3/parser.y"
--'  231  0  ~/hw3/parser.y
-|4,39,231,0,1591905090,"~/hw3/parser.y"
--'  231  0  ~/hw3/parser.y
-|4,39,231,0,1591905090,"~/hw3/parser.y"
--'  231  0  ~/hw3/parser.y
-|4,39,231,0,1591905090,"~/hw3/parser.y"
--'  231  0  ~/hw3/parser.y
-|4,39,231,0,1591905090,"~/hw3/parser.y"
--'  231  0  ~/hw3/parser.y
-|4,39,231,0,1591905090,"~/hw3/parser.y"
--'  231  0  ~/hw3/parser.y
-|4,39,231,0,1591905090,"~/hw3/parser.y"
+|4,39,1,0,1591937268,"~/hw3/codegen.S"
+-'  1  0  ~/hw3/codegen.S
+|4,39,1,0,1591937268,"~/hw3/codegen.S"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
+-'  373  31  ~/hw3/parser.y
+|4,39,373,31,1591937260,"~/hw3/parser.y"
 -'  1  0  ~/hw3/parser.y
-|4,39,1,0,1591905085,"~/hw3/parser.y"
+|4,39,1,0,1591936809,"~/hw3/parser.y"
 -'  1  0  ~/hw3/parser.y
-|4,39,1,0,1591905085,"~/hw3/parser.y"
+|4,39,1,0,1591936809,"~/hw3/parser.y"
 -'  1  0  ~/hw3/parser.y
-|4,39,1,0,1591905085,"~/hw3/parser.y"
+|4,39,1,0,1591936809,"~/hw3/parser.y"
 -'  1  0  ~/hw3/parser.y
-|4,39,1,0,1591905085,"~/hw3/parser.y"
--'  425  63  ~/hw3/parser.y
-|4,39,425,63,1591905047,"~/hw3/parser.y"
--'  425  63  ~/hw3/parser.y
-|4,39,425,63,1591905047,"~/hw3/parser.y"
--'  417  63  ~/hw3/parser.y
-|4,39,417,63,1591905047,"~/hw3/parser.y"
--'  417  63  ~/hw3/parser.y
-|4,39,417,63,1591905047,"~/hw3/parser.y"
--'  417  63  ~/hw3/parser.y
-|4,39,417,63,1591905047,"~/hw3/parser.y"
--'  417  63  ~/hw3/parser.y
-|4,39,417,63,1591905047,"~/hw3/parser.y"
--'  425  63  ~/hw3/parser.y
-|4,39,425,63,1591905047,"~/hw3/parser.y"
--'  417  63  ~/hw3/parser.y
-|4,39,417,63,1591905047,"~/hw3/parser.y"
--'  417  63  ~/hw3/parser.y
-|4,39,417,63,1591905047,"~/hw3/parser.y"
--'  417  63  ~/hw3/parser.y
-|4,39,417,63,1591905047,"~/hw3/parser.y"
--'  417  63  ~/hw3/parser.y
-|4,39,417,63,1591905047,"~/hw3/parser.y"
--'  419  71  ~/hw3/parser.y
-|4,39,419,71,1591905033,"~/hw3/parser.y"
--'  411  71  ~/hw3/parser.y
-|4,39,411,71,1591905033,"~/hw3/parser.y"
--'  419  71  ~/hw3/parser.y
-|4,39,419,71,1591905033,"~/hw3/parser.y"
--'  411  71  ~/hw3/parser.y
-|4,39,411,71,1591905033,"~/hw3/parser.y"
--'  411  71  ~/hw3/parser.y
-|4,39,411,71,1591905033,"~/hw3/parser.y"
--'  411  71  ~/hw3/parser.y
-|4,39,411,71,1591905033,"~/hw3/parser.y"
--'  411  71  ~/hw3/parser.y
-|4,39,411,71,1591905033,"~/hw3/parser.y"
--'  419  71  ~/hw3/parser.y
-|4,39,419,71,1591905033,"~/hw3/parser.y"
--'  411  71  ~/hw3/parser.y
-|4,39,411,71,1591905033,"~/hw3/parser.y"
--'  411  71  ~/hw3/parser.y
-|4,39,411,71,1591905033,"~/hw3/parser.y"
--'  411  71  ~/hw3/parser.y
-|4,39,411,71,1591905033,"~/hw3/parser.y"
--'  411  71  ~/hw3/parser.y
-|4,39,411,71,1591905033,"~/hw3/parser.y"
--'  45  5  ~/hw3/parser.y
-|4,39,45,5,1591905031,"~/hw3/parser.y"
--'  45  5  ~/hw3/parser.y
-|4,39,45,5,1591905031,"~/hw3/parser.y"
--'  45  5  ~/hw3/parser.y
-|4,39,45,5,1591905031,"~/hw3/parser.y"
--'  45  5  ~/hw3/parser.y
-|4,39,45,5,1591905031,"~/hw3/parser.y"
--'  45  5  ~/hw3/parser.y
-|4,39,45,5,1591905031,"~/hw3/parser.y"
--'  45  5  ~/hw3/parser.y
-|4,39,45,5,1591905031,"~/hw3/parser.y"
--'  45  5  ~/hw3/parser.y
-|4,39,45,5,1591905031,"~/hw3/parser.y"
--'  45  5  ~/hw3/parser.y
-|4,39,45,5,1591905031,"~/hw3/parser.y"
--'  45  5  ~/hw3/parser.y
-|4,39,45,5,1591905031,"~/hw3/parser.y"
+|4,39,1,0,1591936809,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591936809,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591936809,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591936809,"~/hw3/parser.y"
+-'  1  0  ~/hw3/parser.y
+|4,39,1,0,1591936809,"~/hw3/parser.y"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  35  1  ~/hw3/codegen.S
+|4,39,35,1,1591936807,"~/hw3/codegen.S"
+-'  1  0  ~/hw3/codegen.S
+|4,39,1,0,1591936800,"~/hw3/codegen.S"
+-'  1  0  ~/hw3/codegen.S
+|4,39,1,0,1591936800,"~/hw3/codegen.S"
+-'  1  0  ~/hw3/codegen.S
+|4,39,1,0,1591936800,"~/hw3/codegen.S"
+-'  1  0  ~/hw3/codegen.S
+|4,39,1,0,1591936800,"~/hw3/codegen.S"
+-'  1  0  ~/hw3/codegen.S
+|4,39,1,0,1591936800,"~/hw3/codegen.S"
+-'  1  0  ~/hw3/codegen.S
+|4,39,1,0,1591936800,"~/hw3/codegen.S"
+-'  1  0  ~/hw3/codegen.S
+|4,39,1,0,1591936800,"~/hw3/codegen.S"
+-'  1  0  ~/hw3/codegen.S
+|4,39,1,0,1591936800,"~/hw3/codegen.S"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
+-'  299  23  ~/hw3/parser.y
+|4,39,299,23,1591936796,"~/hw3/parser.y"
 
 # History of marks within files (newest to oldest):
 
+> ~/hw3/codegen.S
+	*	1591937757	0
+	"	95	0
+	.	1	0
+	+	1	0
+
 > ~/hw3/parser.y
-	*	1591905485	0
-	"	507	33
-	^	507	34
-	.	507	33
-	+	375	2
-	+	379	22
-	+	207	42
-	+	229	27
-	+	234	43
-	+	245	7
-	+	207	46
-	+	496	0
-	+	17	13
-	+	508	9
-	+	592	11
-	+	591	19
-	+	595	2
-	+	594	23
-	+	504	0
-	+	148	60
-	+	237	2
-	+	238	2
-	+	237	18
-	+	238	0
-	+	148	47
-	+	459	24
-	+	458	18
-	+	457	18
-	+	456	18
-	+	453	18
-	+	452	18
-	+	451	18
-	+	462	18
-	+	463	18
-	+	464	18
-	+	465	18
-	+	498	0
-	+	497	0
-	+	499	28
-	+	497	26
-	+	498	28
-	+	499	32
-	+	504	26
-	+	505	35
-	+	505	36
-	+	506	0
-	+	506	31
-	+	456	57
-	+	451	79
-	+	237	50
-	+	238	21
-	+	237	38
-	+	520	0
-	+	511	49
-	+	30	26
-	+	30	1
-	+	30	12
-	+	437	0
-	+	54	13
-	+	418	58
-	+	30	11
-	+	443	0
-	+	442	1
-	+	440	0
-	+	439	1
-	+	436	18
-	+	436	3
-	+	435	3
-	+	434	3
-	+	437	0
-	+	418	50
-	+	511	24
+	*	1591937674	0
+	"	497	2
+	^	497	3
+	.	497	2
 	+	54	2
 	+	30	0
 	+	28	0
 	+	46	12
 	+	45	11
-	+	524	7
-	+	511	36
-	+	513	1
-	+	514	0
-	+	513	8
-	+	514	8
-	+	513	6
-	+	514	23
-	+	418	52
-	+	419	74
-	+	424	34
+	+	604	7
+	+	591	36
+	+	593	1
+	+	594	0
+	+	593	8
+	+	594	8
+	+	593	6
+	+	594	23
+	+	483	52
+	+	484	74
+	+	504	34
 	+	33	24
-	+	512	21
-	+	425	63
-	+	417	0
-	+	416	45
-	+	512	2
-	+	236	0
-	+	393	0
-	+	385	2
-	+	393	0
-	+	389	21
-	+	517	0
-	+	515	33
-	+	516	32
-	+	515	37
-	+	507	33
+	+	592	21
+	+	505	63
+	+	482	0
+	+	481	45
+	+	592	2
+	+	406	0
+	+	458	0
+	+	450	2
+	+	458	0
+	+	454	21
+	+	597	0
+	+	595	33
+	+	596	32
+	+	595	37
+	+	587	33
+	+	93	0
+	+	101	0
+	+	98	10
+	+	406	0
+	+	406	27
+	+	406	0
+	+	406	27
+	+	406	1
+	+	93	870
+	+	406	15
+	+	406	0
+	+	169	2
+	+	173	0
+	+	171	32
+	+	172	27
+	+	171	26
+	+	172	29
+	+	176	0
+	+	175	11
+	+	172	21
+	+	175	27
+	+	179	15
+	+	180	0
+	+	178	1
+	+	175	18
+	+	178	23
+	+	182	0
+	+	181	25
+	+	168	26
+	+	174	3
+	+	177	29
+	+	180	3
+	+	406	0
+	+	168	25
+	+	174	2
+	+	180	2
+	+	177	28
+	+	333	0
+	+	325	1
+	+	372	0
+	+	364	1
+	+	372	0
+	+	368	27
+	+	351	1
+	+	359	0
+	+	355	27
+	+	346	0
+	+	338	1
+	+	346	0
+	+	342	27
+	+	325	1
+	+	333	0
+	+	329	26
+	+	368	34
+	+	492	0
+	+	486	1
+	+	494	1
+	+	501	0
+	+	494	1
+	+	486	0
+	+	492	0
+	+	486	2
+	+	488	32
+	+	494	2
+	+	496	32
+	+	493	29
+	+	485	29
+	+	497	2
 
-> ~/hw3/codegen.S
-	*	1591905448	0
-	"	153	11
-	.	1	0
-	+	1	0
+> ~/hw3/y.output
+	*	1591935836	0
+	"	857	17
+
+> ~/hw3/Testcase/Branch/0.c
+	*	1591910965	0
+	"	1	0
 
 > ~/hw3/Testcase/ArithmeticExpression/0.c
 	*	1591894506	0
@@ -738,14 +749,6 @@ $fp
 	+	144	44
 	+	54	125
 	+	139	45
-
-> ~/hw3/Testcase/Branch/0.c
-	*	1591712281	0
-	"	1	0
-
-> ~/hw3/y.output
-	*	1591712150	0
-	"	553	18
 
 > ~/hw2/y.output
 	*	1591711601	0

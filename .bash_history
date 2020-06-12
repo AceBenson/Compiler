@@ -1,84 +1,3 @@
-logout
-cd hw1/
-ls
-vim testcase_basic.out 
-vim scanner.l 
-cd 
-ls -a
-touch .vimrc
-vim .vimrc 
-cd hw1/
-vim scanner.l 
-flex scanner.l 
-vim scanner.l 
-flex scanner.l 
-ls
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase_basic
-vim scanner.l 
-touch testcase1
-vim testcase1
-./a.out < testcase1
-vim scanner.l 
-flex scanner.l 
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase1
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
-./a.out < testcase1
-diff
-diff --help
-vim scanner.l 
-flex scanner.l 
-gcc lex.yy.c -lfl
 ./a.out < testcase1
 ./a.out < testcase_basic
 vim scanner.l 
@@ -1997,4 +1916,85 @@ vim Testcase/Basic/1.c
 ls Testcase/
 ls Testcase/ArithmeticExpression/
 vim Testcase/ArithmeticExpression/0.c 
+logout
+cd hw3
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim parser.y 
+vim codegen.S 
+vim parser.y 
+make
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+./codegen < test.c
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/ArithmeticExpression/0.c 
+vim codegen.S 
+vim parser.y 
+make
+cd ../
+git add .
+git commit -m "hw3 1st"
+cd hw3
+./codegen < Testcase/Function/0.c 
+vim codegen.S 
+vim parser.y 
+vim codegen.S 
+vim parse
+./codegen < Testcase/Branch/0.c 
+vim Testcase/Branch/0.c 
+vim codegen.S 
+vim parser.y 
+make
+vim parser.y 
+make
+./codegen < Testcase/Branch/0.c 
+logout
+cd hw3
+vim parser.y 
+make
+vim parser.y 
+make
+vim parser.y 
+make
+vim y.output 
+vim parser.y 
+make
+./codegen < Testcase/Branch/0.c 
+vim codegen.S 
+vim parser.y 
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/Branch/1.c 
+vim codegen.S 
+vim parser.y 
+make
+vim codegen.S 
+vim parser.y 
+make
+./codegen < Testcase/Branch/0.c 
+vim codegen.S 
 logout

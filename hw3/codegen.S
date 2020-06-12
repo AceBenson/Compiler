@@ -64,6 +64,38 @@ codegen:
 
 	sw  t0, -16(fp) 
 
+	lw  t0, -12(fp) 
+	addi sp, sp, -4
+	sw t0, 0(sp)
+
+	lw t0, 0(sp)
+	addi sp, sp, 4
+	addi t0, t0, -1
+	addi sp, sp, -4
+	sw t0, 0(sp)
+
+	li t0, 3
+	addi sp, sp, -4
+	sw t0, 0(sp)
+
+	lw t0, 0(sp)
+	addi sp, sp, 4
+	lw t1, 0(sp)
+	addi sp, sp, 4
+	xor t0, t0, t1
+	addi sp, sp, -4
+	sw t0, 0(sp)
+
+	lw t0, 0(sp)
+	addi sp, sp, 4
+	li t1, 0
+	beq t0 t1, Else
+	li t0, 5
+	addi sp, sp, -4
+	sw t0, 0(sp)
+
+	sw  t0, -20(fp) 
+
 	li t0, 26
 	addi sp, sp, -4
 	sw t0, 0(sp)
@@ -86,7 +118,7 @@ codegen:
 	addi sp, sp, -4
 	sw t0, 0(sp)
 
-	li t0, 1000
+	li t0, 2000
 	addi sp, sp, -4
 	sw t0, 0(sp)
 
@@ -106,6 +138,7 @@ codegen:
 	lw ra, 0(sp)
 	addi sp, sp, 4
 
+	j Exit
 	li t0, 26
 	addi sp, sp, -4
 	sw t0, 0(sp)
@@ -151,3 +184,4 @@ codegen:
 	lw ra, -4(fp)
 	lw fp, 0(fp)
 	addi sp, sp, 8
+	jalr zero, 0(ra)

@@ -90,22 +90,20 @@
 %left <ival> POINTSAT '.' 
 %right THEN ELSE
 
-%type <sval> func_definitor IDENTIFIER STRING_LITERAL FUNCTION primary_expression postfix_expression unary_operator unary_expression cast_expression multiplicative_expression additive_expression shift_expression relational_expression equality_expression and_expression exclusive_or_expression inclusive_or_expression logical_and_expression logical_or_expression conditional_expression assignment_expression expression expression_statement statement argument_expression_list compound_statement compound_list selection_statement jump_statement iteration_statement labeled_statement assignment_operator declaration declaration_specifiers init_declarator_list init_declarator type_specifier declarator initializer initializer_list direct_declarator declaration_list parameter_type_list parameter_list parameter_declaration declaration_specifiers function_definition external_declaration translation_unit program
+%type <sval> func_definitor IDENTIFIER STRING_LITERAL FUNCTION primary_expression postfix_expression unary_operator unary_expression cast_expression multiplicative_expression additive_expression shift_expression relational_expression equality_expression and_expression exclusive_or_expression inclusive_or_expression logical_and_expression logical_or_expression conditional_expression assignment_expression expression expression_statement statement argument_expression_list compound_statement compound_list selection_statement jump_statement iteration_statement labeled_statement assignment_operator declaration declaration_specifiers init_declarator_list init_declarator type_specifier declarator initializer initializer_list direct_declarator declaration_list parameter_type_list parameter_list parameter_declaration declaration_specifiers function_definition ext exts
 %type <ival> CONSTANT
 %type <dval> FCONSTANT
 %type <cval> CCONSTANT
 
-%start program
+%start exts
 
 %%
-program
-	: translation_unit { }
+
+exts
+	: ext 					{ } 
+	| exts ext { }
 	;
-translation_unit
-	: external_declaration 					{ } 
-	| translation_unit external_declaration { }
-	;
-external_declaration
+ext
 	: function_definition 	{ }
 	| declaration 			{ }
 	;
@@ -167,8 +165,21 @@ labeled_statement
 	| DEFAULT ':' statement { }
 	;
 selection_statement
-	: IF '(' expression ')' { cur_scope++; } compound_statement { }
-	| selection_statement ELSE { cur_scope++; } compound_statement { }
+	: IF '(' expression ')' { 
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+		fprintf(fptr, "\tli t1, 0\n");
+		fprintf(fptr, "\tbeq t0 t1, Else\n");
+		cur_scope++; 
+	} compound_statement { 
+		fprintf(fptr, "\tj Exit\n");
+	}
+	| selection_statement ELSE { 
+		fprintf(fptr, "Else: ");
+		cur_scope++; 
+	} compound_statement { 
+		fprintf(fptr, "Exit :");
+	}
 	| SWITCH '(' expression ')' { cur_scope++; } compound_statement { }
 	;
 iteration_statement
@@ -310,19 +321,55 @@ logical_and_expression
 	;
 inclusive_or_expression
 	: exclusive_or_expression { }
-	| inclusive_or_expression '|' exclusive_or_expression { }
+	| inclusive_or_expression '|' exclusive_or_expression { 
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tlw t1, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tor t0, t0, t1\n");
+        fprintf(fptr, "\taddi sp, sp, -4\n");
+        fprintf(fptr, "\tsw t0, 0(sp)\n");
+        fprintf(fptr, "\n");
+	}
 	;
 exclusive_or_expression
 	: and_expression { }
-	| exclusive_or_expression '^' and_expression { }
+	| exclusive_or_expression '^' and_expression { 
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tlw t1, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\txor t0, t0, t1\n");
+        fprintf(fptr, "\taddi sp, sp, -4\n");
+        fprintf(fptr, "\tsw t0, 0(sp)\n");
+        fprintf(fptr, "\n");
+	}
 	;
 and_expression
 	: equality_expression { }
-	| and_expression '&' equality_expression { }
+	| and_expression '&' equality_expression {
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tlw t1, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tand t0, t0, t1\n");
+        fprintf(fptr, "\taddi sp, sp, -4\n");
+        fprintf(fptr, "\tsw t0, 0(sp)\n");
+        fprintf(fptr, "\n");
+	}
 	;
 equality_expression
 	: relational_expression { }
-	| equality_expression EQ_OP relational_expression { }
+	| equality_expression EQ_OP relational_expression { 
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tlw t1, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\txor t0, t0, t1\n");
+        fprintf(fptr, "\taddi sp, sp, -4\n");
+        fprintf(fptr, "\tsw t0, 0(sp)\n");
+        fprintf(fptr, "\n");
+	}
 	| equality_expression NE_OP relational_expression { }
 	;
 relational_expression
@@ -334,8 +381,26 @@ relational_expression
 	;
 shift_expression
 	: additive_expression { }
-	| shift_expression LEFT_OP additive_expression { }
-	| shift_expression RIGHT_OP additive_expression { }
+	| shift_expression LEFT_OP additive_expression { 
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tlw t1, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tsll t0, t0, t1\n");
+        fprintf(fptr, "\taddi sp, sp, -4\n");
+        fprintf(fptr, "\tsw t0, 0(sp)\n");
+        fprintf(fptr, "\n");
+	}
+	| shift_expression RIGHT_OP additive_expression {
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tlw t1, 0(sp)\n");
+        fprintf(fptr, "\taddi sp, sp, 4\n");
+        fprintf(fptr, "\tsrl t0, t0, t1\n");
+        fprintf(fptr, "\taddi sp, sp, -4\n");
+        fprintf(fptr, "\tsw t0, 0(sp)\n");
+        fprintf(fptr, "\n");
+	 }
 	;
 additive_expression
 	: additive_expression '+' multiplicative_expression {
@@ -417,8 +482,23 @@ postfix_expression
 	| postfix_expression '[' expression ']' 				{ }
 	| postfix_expression '(' ')' 							{ callFunc($1, 0); }
 	| postfix_expression '(' argument_expression_list ')' 	{ callFunc($1, argc); }
-	| postfix_expression INC_OP 							{ }
-	| postfix_expression DEC_OP 							{ }
+	| postfix_expression INC_OP { 
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+		fprintf(fptr, "\taddi sp, sp, 4\n");
+		fprintf(fptr, "\taddi t0, t0, 1\n");
+		fprintf(fptr, "\taddi sp, sp, -4\n");
+		fprintf(fptr, "\tsw t0, 0(sp)\n");
+		fprintf(fptr, "\n");
+	}
+	| postfix_expression DEC_OP {
+		fprintf(fptr, "\tlw t0, 0(sp)\n");
+		fprintf(fptr, "\taddi sp, sp, 4\n");
+		fprintf(fptr, "\taddi t0, t0, -1\n");
+		fprintf(fptr, "\taddi sp, sp, -4\n");
+		fprintf(fptr, "\tsw t0, 0(sp)\n");
+		fprintf(fptr, "\n");
+	
+	}
 	;
 argument_expression_list
 	: assignment_expression { argc++; }
